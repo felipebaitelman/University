@@ -1,0 +1,35 @@
+<h1>Event Dates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Host</th>
+      <th>Location</th>
+      <th>Capacity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @event_dates.each do |event_date| %>
+      <tr>
+        <td><%= event_date.event_id %></td>
+        <td><%= event_date.start_date %></td>
+        <td><%= event_date.end_date %></td>
+        <td><%= event_date.host_id %></td>
+        <td><%= event_date.location %></td>
+        <td><%= event_date.capacity %></td>
+        <td><%= link_to 'Show', event_date %></td>
+        <td><%= link_to 'Edit', edit_event_date_path(event_date) %></td>
+        <td><%= link_to 'Destroy', event_date, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Event Date', new_event_date_path %>

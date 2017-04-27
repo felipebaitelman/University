@@ -1,0 +1,39 @@
+<html>
+<body class="scroll-assist">
+<div class="nav-container">
+  <a id="top"></a>
+  <nav>
+    <%= render 'layouts/nav_transparent_final'%>
+  </nav>
+</div>
+    <div class="main-container">
+      <section class="cover fullscreen image-bg overlay">
+        <div class="background-image-holder">
+          <%= image_tag("foundry/header.jpg", class: "background-image", alt: "image")%>
+        </div>
+        <div class="container v-align-transform-custom">
+          <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+              <div class="feature bordered text-center">
+                <%= devise_error_messages! %>
+                <h4 class="uppercase">Recuperar Contraseña</h4>
+                <br>
+                <div class="field">
+                  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+                  <%= f.email_field :email, autofocus: true, :class => 'input',
+                                    :placeholder => 'Mail', :type => 'text' %>
+                </div>
+                <div class="actions">
+                  <%= f.submit "Recuperar Contraseña" %>
+                </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <!--end of row-->
+        </div>
+        <!--end of container-->
+      </section>
+</div>
+</body>
+</html>

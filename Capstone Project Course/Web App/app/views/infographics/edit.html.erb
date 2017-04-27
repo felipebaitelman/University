@@ -1,0 +1,92 @@
+<body>
+<div class="nav-container">
+  <%= render "layouts/nav_admin_final" %>
+</div>
+
+<div class="main-container">
+  <section class="page-title page-title-3 bg-secondary">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="uppercase mb0">Editar secuencia</h1>
+        </div>
+      </div>
+      <!--end of row-->
+    </div>
+    <!--end of container-->
+  </section>
+  <br>
+
+  <%= render 'form', infographic: @infographic %>
+
+
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-8">
+      <p class="group-categ"><strong>Categorías</strong></p>
+      <div id="labels">
+        <% if @infographic.topics.size > 0 %>
+            <ul class="labels">
+              <% @infographic.topics.uniq.each do |topics| %>
+                  <li><%= topics.name %></li>
+              <% end %>
+            </ul>
+        <% else %>
+            <ul class="labels">
+              <li>SIN CATEGORÍA</li>
+            </ul>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-8">
+      <h5 class="uppercase mb8"><b>Editar Contenidos</b></h5>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <div class="lightbox-grid square-thumbs" data-gallery-title="Gallery">
+        <ul>
+          <% @infographic.images.each_with_index do |image,i| %>
+              <li>
+                <p><%=number_field_tag "Order#{i}", image.image_sequences.first.order, within: 1...@infographic.images.count+1%></p>
+                <a href=<%=image.image_file%> data-lightbox="true" >
+                    <%= image_tag(image.image_file(:thumb))%>
+                </a>
+                <p><%=text_field_tag "description#{i}", image.description %></p>
+                <div hidden id=<%="Image#{i}"%> data-image_id=<%=image.id%>> </div>
+              </li>
+          <% end %>
+          <div hidden id='image_count' data-count=<%=@infographic.images.count%>> </div>
+          <div hidden id='infographic_id' data-id=<%=@infographic.id%>> </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" id="submit_b">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-2">
+      <div class="actions">
+        <button type="submit" class="btn btn-default" formmethod="post" id="order"> Actualizar Contenidos</button>
+      </div>
+    </div>
+  </div>
+  <div id = "alert_placeholder"></div>
+  <br>
+
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-11">
+      <%= link_to 'Atrás', infographics_path %>
+    </div>
+  </div>
+
+  </div>
+</body>

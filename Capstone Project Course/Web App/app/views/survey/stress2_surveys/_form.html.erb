@@ -1,0 +1,260 @@
+<%= form_for([:survey, @stress2_survey],:remote => true) do |f| %>
+  <% if @stress2_survey.errors.any? %>
+    <div id='error_explanation'>
+      <h2><%= pluralize(@stress2_survey.errors.count, 'error') %> prohibited this stress2_survey from being saved:</h2>
+
+      <ul>
+      <% @stress2_survey.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class='field' id='ST2question1'>
+      <h5 class='uppercase'>1. Durante el último mes, con qué frecuencia ha estado afectado por alguna situación que ocurrió inesperadamente.</h5>
+      <br>
+      <%= f.radio_button(:p1, '0', :class => 'question1', :checked => true) %>
+      <%= f.label(:option1, 'Nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p1, '1', :class => 'question1') %>
+      <%= f.label(:option2, 'Casi nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p1, '2', :class => 'question1') %>
+      <%= f.label(:option3, 'De vez en cuando', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p1, '3', :class => 'question1') %>
+      <%= f.label(:option4, 'A menudo', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p1, '4', :class => 'question1') %>
+      <%= f.label(:option4, 'Muy a menudo', class: 'stresscss uppercase') %>
+      <br><br>
+    </div>
+
+    <div class='field' id='ST2question2'>
+      <h5 class='uppercase'>2. Durante el último mes, con qué frecuencia se ha sentido incapaz de controlar las cosas importantes de su vida.</h5>
+      <br>
+      <%= f.radio_button(:p2, '0', :class => 'question2', :checked => true) %>
+      <%= f.label(:option1,'Nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p2, '1', :class => 'question2') %>
+      <%= f.label(:option2,'Casi nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p2, '2', :class => 'question2') %>
+      <%= f.label(:option3,'De vez en cuando', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p2, '3', :class => 'question2') %>
+      <%= f.label(:option4,'A menudo', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p2, '4', :class => 'question2') %>
+      <%= f.label(:option4,'Muy a menudo', class: 'stresscss uppercase') %>
+      <br><br>
+    </div>
+
+    <div class='field' id='ST2question3'>
+      <h5 class='uppercase'>3.Durante el último mes, con qué frecuencia se ha sentido nervioso o estresado. </h5>
+      <br>
+      <%= f.radio_button(:p3, '0', :class => 'question3', :checked => true) %>
+      <%= f.label(:option1,'Nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p3, '1', :class => 'question3') %>
+      <%= f.label(:option2,'Casi nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p3, '2', :class => 'question3') %>
+      <%= f.label(:option3,'De vez en cuando', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p3, '3', :class => 'question3') %>
+      <%= f.label(:option4,'A menudo', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p3, '4', :class => 'question3') %>
+      <%= f.label(:option4,'Muy a menudo', class: 'stresscss uppercase') %>
+      <br><br>
+    </div>
+
+    <div class='field' id='ST2question4'>
+      <h5 class='uppercase'>4. Durante el último mes, con qué frecuencia ha manejado con éxito los pequeños problemas irritantes de su vida.</h5>
+      <br>
+      <%= f.radio_button(:p4, '4', :class => 'question4', :checked => true) %>
+      <%= f.label(:option1,'Nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p4, '3', :class => 'question4') %>
+      <%= f.label(:option2,'Casi nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p4, '2', :class => 'question4') %>
+      <%= f.label(:option3,'De vez en cuando', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p4, '1', :class => 'question4') %>
+      <%= f.label(:option4,'A menudo', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p4, '0', :class => 'question4') %>
+      <%= f.label(:option4,'Muy a menudo', class: 'stresscss uppercase') %>
+      <br><br>
+    </div>
+
+    <div class='field' id='ST2question5'>
+      <h5 class='uppercase'>5. Durante el último mes, con qué frecuencia ha sentido que ha afrontado efectivamente los cambios importantes que han estado ocurriendo en su vida </h5>
+      <br>
+      <%= f.radio_button(:p5, '4', :class => 'question5', :checked => true) %>
+      <%= f.label(:option1,'Nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p5, '3', :class => 'question5') %>
+      <%= f.label(:option2,'Casi nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p5, '2', :class => 'question5') %>
+      <%= f.label(:option3,'De vez en cuando', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p5, '1', :class => 'question5') %>
+      <%= f.label(:option4,'A menudo', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p5, '0', :class => 'question5') %>
+      <%= f.label(:option4,'Muy a menudo', class: 'stresscss uppercase') %>
+      <br><br>
+    </div>
+
+    <div class='field' id='ST2question6'>
+      <h5 class='uppercase'>6. Durante el último mes, con qué frecuencia ha estado seguro sobre su capacidad para manejar sus problemas personales.</h5>
+      <br>
+      <%= f.radio_button(:p6, '4', :class => 'question6', :checked => true) %>
+      <%= f.label(:option1,'Nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p6, '3', :class => 'question6') %>
+      <%= f.label(:option2,'Casi nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p6, '2', :class => 'question6') %>
+      <%= f.label(:option3,'De vez en cuando', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p6, '1', :class => 'question6') %>
+      <%= f.label(:option4,'A menudo', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p6, '0', :class => 'question6') %>
+      <%= f.label(:option4,'Muy a menudo', class: 'stresscss uppercase') %>
+      <br><br>
+    </div>
+
+    <div class='field' id='ST2question7'>
+      <h5 class='uppercase'>7. Durante el último mes, con qué frecuencia ha sentido que las cosas le salen bien.</h5>
+      <br>
+      <%= f.radio_button(:p7, '4', :class => 'question7', :checked => true) %>
+      <%= f.label(:option1,'Nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p7, '3', :class => 'question7') %>
+      <%= f.label(:option2,'Casi nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p7, '2', :class => 'question7') %>
+      <%= f.label(:option3,'De vez en cuando', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p7, '1', :class => 'question7') %>
+      <%= f.label(:option4,'A menudo', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p7, '0', :class => 'question7') %>
+      <%= f.label(:option4,'Muy a menudo', class: 'stresscss uppercase') %>
+      <br><br>
+    </div>
+
+    <div class='field' id='ST2question8'>
+      <h5 class='uppercase'>8. En el último mes, con qué frecuencia ha sentido no poder afrontar todas las cosas que debía realizar.</h5>
+      <br>
+      <%= f.radio_button(:p8, '0', :class => 'question8', :checked => true) %>
+      <%= f.label(:option1,'Nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p8, '1', :class => 'question8') %>
+      <%= f.label(:option2,'Casi nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p8, '2', :class => 'question8') %>
+      <%= f.label(:option3,'De vez en cuando', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p8, '3', :class => 'question8') %>
+      <%= f.label(:option4,'A menudo', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p8, '4', :class => 'question8') %>
+      <%= f.label(:option4,'Muy a menudo', class: 'stresscss uppercase') %>
+      <br><br>
+    </div>
+
+    <div class='field' id='ST2question9'>
+      <h5 class='uppercase'>9. Durante el último mes con qué frecuencia ha podido controlar las dificultades de su vida.
+      </h5>
+      <br>
+      <%= f.radio_button(:p9, '4', :class => 'question9', :checked => true) %>
+      <%= f.label(:option1,'Nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p9, '3', :class => 'question9') %>
+      <%= f.label(:option2,'Casi nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p9, '2', :class => 'question9') %>
+      <%= f.label(:option3,'De vez en cuando', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p9, '1', :class => 'question9') %>
+      <%= f.label(:option4,'A menudo', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p9, '0', :class => 'question9') %>
+      <%= f.label(:option4,'Muy a menudo', class: 'stresscss uppercase') %>
+      <br><br>
+    </div>
+
+    <div class='field' id='ST2question10'>
+      <h5 class='uppercase'>10. Durante el último mes, con qué frecuencia ha sentido que está al control de todo.</h5>
+      <br>
+      <%= f.radio_button(:p10, '4', :class => 'question10', :checked => true) %>
+      <%= f.label(:option1,'Nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p10, '3', :class => 'question10') %>
+      <%= f.label(:option2,'Casi nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p10, '2', :class => 'question10') %>
+      <%= f.label(:option3,'De vez en cuando', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p10, '1', :class => 'question10') %>
+      <%= f.label(:option4,'A menudo', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p10, '0', :class => 'question10') %>
+      <%= f.label(:option4,'Muy a menudo', class: 'stresscss uppercase') %>
+      <br><br>
+    </div>
+
+    <div class='field' id='ST2question11'>
+      <h5 class='uppercase'>11. Durante el último mes, con qué frecuencia se ha sentido molesto, porque los sucesos que le han ocurrido, estaban fuera de su control.</h5>
+      <br>
+      <%= f.radio_button(:p11, '0', :class => 'question11', :checked => true) %>
+      <%= f.label(:option1,'Nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p11, '1', :class => 'question11') %>
+      <%= f.label(:option2,'Casi nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p11, '2', :class => 'question11') %>
+      <%= f.label(:option3,'De vez en cuando', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p11, '3', :class => 'question11') %>
+      <%= f.label(:option4,'A menudo', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p11, '4', :class => 'question11') %>
+      <%= f.label(:option4,'Muy a menudo', class: 'stresscss uppercase') %>
+      <br><br>
+    </div>
+
+    <div class='field' id='ST2question12'>
+      <h5 class='uppercase'>12. Durante el último mes, con qué frecuencia ha pensado sobre aquellas cosas que le quedan por lograr.</h5>
+      <br>
+      <%= f.radio_button(:p12, '0', :class => 'question12', :checked => true) %>
+      <%= f.label(:option1,'Nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p12, '1', :class => 'question12') %>
+      <%= f.label(:option2,'Casi nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p12, '2', :class => 'question12') %>
+      <%= f.label(:option3,'De vez en cuando', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p12, '3', :class => 'question12') %>
+      <%= f.label(:option4,'A menudo', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p12, '4', :class => 'question12') %>
+      <%= f.label(:option4,'Muy a menudo', class: 'stresscss uppercase') %>
+      <br><br>
+    </div>
+
+    <div class='field' id='ST2question13'>
+      <h5 class='uppercase'>13. Durante el último mes, con qué frecuencia ha podido controlar su tiempo. </h5>
+      <br>
+      <%= f.radio_button(:p13, '4', :class => 'question13', :checked => true) %>
+      <%= f.label(:option1,'Nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p13, '3', :class => 'question13') %>
+      <%= f.label(:option2,'Casi nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p13, '2', :class => 'question13') %>
+      <%= f.label(:option3,'De vez en cuando', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p13, '1', :class => 'question13') %>
+      <%= f.label(:option4,'A menudo', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p13, '0', :class => 'question13') %>
+      <%= f.label(:option4,'Muy a menudo', class: 'stresscss uppercase') %>
+      <br><br>
+    </div>
+
+    <div class='field' id='ST2question14'>
+      <h5 class='uppercase'>14. Durante el último mes, con qué frecuencia ha sentido que las dificultades se acumulan tanto que no puede superarlas.</h5>
+      <br>
+      <%= f.radio_button(:p14, '0', :class => 'question14', :checked => true) %>
+      <%= f.label(:option1,'Nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p14, '1', :class => 'question14') %>
+      <%= f.label(:option2,'Casi nunca', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p14, '2', :class => 'question14') %>
+      <%= f.label(:option3,'De vez en cuando', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p14, '3', :class => 'question14') %>
+      <%= f.label(:option4,'A menudo', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p14, '4', :class => 'question14') %>
+      <%= f.label(:option4,'Muy a menudo', class: 'stresscss uppercase') %>
+      <br><br>
+    </div>
+
+    <div class='row'>
+      <div class='col-sm-4'>
+        <div class='actions'>
+          <button type='button' class='btn btn-filled btn-lg mb32 mt-xs-40' id='next_questionST2'>Siguiente Pregunta</button>
+        </div>
+      </div>
+    </div>
+
+    <div class='row' id='ST2submit_b'>
+      <div class='col-sm-4'>
+        <div class='actions'>
+          <%= f.submit('Obtener Resultado') %>
+        </div>
+      </div>
+    </div>
+<% end %>
+
+<p id='stress2_results'>
+  <%= render @stress2_survey %>
+</p>
+
+

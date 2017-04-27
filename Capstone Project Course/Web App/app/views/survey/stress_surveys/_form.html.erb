@@ -1,0 +1,137 @@
+<%= form_for([:survey, @stress_survey],:remote => true) do |f| %>
+    <% if @stress_survey.errors.any? %>
+    <div id='error_explanation'>
+      <h2><%= pluralize(@stress_survey.errors.count, 'error') %> prohibited this stress_survey from being saved:</h2>
+
+      <ul>
+      <% @stress_survey.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class='field' id='STquestion1'>
+    <h5 class='uppercase'>1. Sentirse nervioso/a, ansioso/a o con los nervios de punta</h5>
+    <br>
+    <%= f.radio_button(:p1, '0', :class => 'question1', :checked => true) %>
+    <%= f.label(:option1, 'Nunca', class: 'stresscss uppercase') %>
+    <%= f.radio_button(:p1, '1', :class => 'question1') %>
+    <%= f.label(:option2, 'Varios días', class: 'stresscss uppercase') %>
+    <%= f.radio_button(:p1, '2', :class => 'question1') %>
+    <%= f.label(:option3, 'Más de la mitad de los días', class: 'stresscss uppercase') %>
+    <%= f.radio_button(:p1, '3', :class => 'question1') %>
+    <%= f.label(:option4, 'Casi todos los días', class: 'stresscss uppercase') %>
+    <br><br>
+  </div>
+
+
+  <div class='field' id='STquestion2'>
+    <h5 class='uppercase'>2. No poder dejar de preocuparse o no poder controlar la preocupación</h5>
+    <br>
+    <%= f.radio_button(:p2, '0', :class => 'question2', :checked => true) %>
+    <%= f.label(:option1, 'Nunca', class: 'stresscss uppercase') %>
+    <%= f.radio_button(:p2, '1', :class => 'question2') %>
+    <%= f.label(:option2, 'Varios días', class: 'stresscss uppercase') %>
+    <%= f.radio_button(:p2, '2', :class => 'question2') %>
+    <%= f.label(:option3, 'Más de la mitad de los días', class: 'stresscss uppercase') %>
+    <%= f.radio_button(:p2, '3', :class => 'question2') %>
+    <%= f.label(:option4, 'Casi todos los días', class: 'stresscss uppercase') %>
+    <br><br>
+  </div>
+
+
+  <div class='field' id='STquestion3'>
+    <h5 class='uppercase'>3. Preocuparse demasiado por diferentes cosas</h5>
+    <br>
+    <%= f.radio_button(:p3, '0', :class => 'question3', :checked => true) %>
+    <%= f.label(:option1, 'Nunca', class: 'stresscss uppercase') %>
+    <%= f.radio_button(:p3, '1', :class => 'question3') %>
+    <%= f.label(:option2, 'Varios días', class: 'stresscss uppercase') %>
+    <%= f.radio_button(:p3, '2', :class => 'question3') %>
+    <%= f.label(:option3, 'Más de la mitad de los días', class: 'stresscss uppercase') %>
+    <%= f.radio_button(:p3, '3', :class => 'question3') %>
+    <%= f.label(:option4, 'Casi todos los días', class: 'stresscss uppercase') %>
+    <br><br>
+  </div>
+
+
+  <div class='field' id='STquestion4'>
+    <h5 class='uppercase'>4. Dificultad para relajarse</h5>
+    <br>
+    <%= f.radio_button(:p4, '0', :class => 'question4', :checked => true) %>
+    <%= f.label(:option1, 'Nunca', class: 'stresscss uppercase') %>
+    <%= f.radio_button(:p4, '1', :class => 'question4') %>
+    <%= f.label(:option2, 'Varios días', class: 'stresscss uppercase') %>
+    <%= f.radio_button(:p4, '2', :class => 'question4') %>
+    <%= f.label(:option3, 'Más de la mitad de los días', class: 'stresscss uppercase') %>
+    <%= f.radio_button(:p4, '3', :class => 'question4') %>
+    <%= f.label(:option4, 'Casi todos los días', class: 'stresscss uppercase') %>
+    <br><br>
+  </div>
+
+  <div class='field' id='STquestion5'>
+    <h5 class='uppercase'>5. Estar tan inquieto/a que es deifícil permanecer sentado/a o quieto/a</h5>
+    <br>
+    <%= f.radio_button(:p5, '0', :class => 'question5', :checked => true) %>
+    <%= f.label(:option1, 'Nunca', class: 'stresscss uppercase') %>
+    <%= f.radio_button(:p5, '1', :class => 'question5') %>
+    <%= f.label(:option2, 'Varios días', class: 'stresscss uppercase') %>
+    <%= f.radio_button(:p5, '2', :class => 'question5') %>
+    <%= f.label(:option3, 'Más de la mitad de los días', class: 'stresscss uppercase') %>
+    <%= f.radio_button(:p5, '3', :class => 'question5') %>
+    <%= f.label(:option4, 'Casi todos los días', class: 'stresscss uppercase') %>
+    <br><br>
+  </div>
+
+
+  <div class='field' id='STquestion6'>
+    <h5 class='uppercase'>6. Enojarse o irritarse con facilidad</h5>
+    <br>
+    <%= f.radio_button(:p6, '0', :class => 'question6', :checked => true) %>
+    <%= f.label(:option1, 'Nunca', class: 'stresscss uppercase') %>
+    <%= f.radio_button(:p6, '1', :class => 'question6') %>
+    <%= f.label(:option2, 'Varios días', class: 'stresscss uppercase') %>
+    <%= f.radio_button(:p6, '2', :class => 'question6') %>
+    <%= f.label(:option3, 'Más de la mitad de los días', class: 'stresscss uppercase') %>
+    <%= f.radio_button(:p6, '3', :class => 'question6') %>
+    <%= f.label(:option4, 'Casi todos los días', class: 'stresscss uppercase') %>
+    <br><br>
+  </div>
+
+  <div class='field' id='STquestion7'>
+    <h5 class='uppercase'>7. Sentirse con miedo como si algo terrible fuera a suceder</h5>
+    <br>
+    <%= f.radio_button(:p7, '0', :class => 'question7', :checked => true) %>
+    <%= f.label(:option1, 'Nunca', class: 'stresscss uppercase') %>
+    <%= f.radio_button(:p7, '1', :class => 'question7') %>
+    <%= f.label(:option2, 'Varios días', class: 'stresscss uppercase') %>
+    <%= f.radio_button(:p7, '2', :class => 'question7') %>
+    <%= f.label(:option3, 'Más de la mitad de los días', class: 'stresscss uppercase') %>
+    <%= f.radio_button(:p7, '3', :class => 'question7') %>
+    <%= f.label(:option4, 'Casi todos los días', class: 'stresscss uppercase') %>
+    <br><br>
+  </div>
+
+    <div class='row'>
+      <div class='col-sm-4'>
+        <div class='actions'>
+          <button type='button' class='btn btn-filled btn-lg mb32 mt-xs-40' id='next_questionST'>Siguiente Pregunta</button>
+        </div>
+      </div>
+    </div>
+
+  <div class='row' id='STsubmit_b'>
+    <div class='col-sm-4'>
+      <div class='actions'>
+        <%= f.submit('Obtener Resultado') %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<p id='stress_results'>
+  <%= render @stress_survey %>
+</p>
+
+

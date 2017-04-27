@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<body class="scroll-assist">
+	<div class="nav-container">
+	  <a id="top"></a>
+	  <nav>
+	    <%= render 'layouts/nav_white_final'%>
+	  </nav>
+	</div>
+<div class="main-container">
+	<div class="row">
+	<div class="col-sm-2">
+	</div>
+	<div class="col-sm-8">
+		<h1 class="uppercase mb0" style="text-align:center;"> Mis Horas </h1>
+		<br></br>
+		<div id="userhours"></div>
+	</div>
+	<div class="col-sm-2">
+	</div>
+  </div>
+  <div id="eventContentUser" title="Event Details" style="display:none;">
+	    Hora Inicio: <span id="startTime"></span><br>
+	    Hora Fin: <span id="endTime"></span><br><br>
+	    Profesional: <span id="professor"></span><br>
+	    Campus: <span id="faculty"></span><br>
+	    Sala: <span id="class"></span><br>
+	    Capacidad Disponible: <span id="availablecap"></span><br>
+	    Capacidad Total <span id="totalcap"></span><br>
+	    <p id="eventInfo"></p>
+
+	    <button><strong><a id="cancel" class='btn' type='submit'>Cancelar Reserva</a></strong></button>
+	</div>
+  <br>
+</div>
+</body>
+</html>

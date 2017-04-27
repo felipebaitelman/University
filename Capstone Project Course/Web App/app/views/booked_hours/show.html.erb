@@ -1,0 +1,12 @@
+<p>
+  <strong>Id event date:</strong>
+  <%= @booked_hour.id_event_date %>
+</p>
+
+<p>
+  <strong>Id user:</strong>
+  <%= @booked_hour.id_user %>
+</p>
+
+<%= link_to 'Edit', edit_booked_hour_path(@booked_hour) %> |
+<%= link_to 'Back', booked_hours_path %>

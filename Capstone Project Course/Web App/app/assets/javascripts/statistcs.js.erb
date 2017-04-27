@@ -1,0 +1,34 @@
+var stats =(function() {
+  $('#stat_mensual').on('click', function(){
+    $( this ).addClass( "active" );
+    $("#stat_anual").removeClass("active"); 
+    $("#stat_all").removeClass("active"); 
+    $.ajax({
+      type: 'GET',
+      url: '/admin/statistics/graphs',
+      data: {type:'month'}
+    });
+  })
+  $('#stat_anual').on('click', function(){
+    $( this ).addClass( "active" );
+    $("#stat_mensual").removeClass("active"); 
+    $("#stat_all").removeClass("active"); 
+    $.ajax({
+      type: 'GET',
+      url: '/admin/statistics/graphs',
+      data: {type:'year'}
+    });
+  })
+  $('#stat_all').on('click', function(){
+    $( this ).addClass( "active" );
+    $("#stat_anual").removeClass("active"); 
+    $("#stat_mensual").removeClass("active"); 
+    $.ajax({
+      type: 'GET',
+      url: '/admin/statistics/graphs',
+      data: {type:'all'}
+    });
+  })
+});
+
+$(document).on('turbolinks:load', stats);

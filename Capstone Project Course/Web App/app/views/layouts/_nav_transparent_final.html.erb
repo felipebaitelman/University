@@ -1,0 +1,109 @@
+<div class="nav-container">
+  <nav class="transparent absolute">
+    <div class="nav-bar">
+      <div class="module left">
+        <a href="">
+          <b><%= link_to 'Relax UC', root_path, method: :get, class: "navbar-brand page-scroll" %></b>
+        </a>
+      </div>
+      <% if user_signed_in? %>
+      <div class="module widget-handle mobile-toggle right visible-sm visible-xs">
+        <i class="ti-menu"></i>
+      </div>
+      <div class="module-group right">
+        <div class="module left">
+          <ul class="menu">
+            <li>
+              <%= link_to 'Escoge tu Video', nature_display_pages_path, method: :get %>
+            </li>
+            <li >
+              <%= link_to 'Programas Semanales', plans_start_path, method: :get %>
+            </li>
+
+            <li class="has-dropdown">
+              <a href="#">
+                Ejercicios
+              </a>
+              <ul>
+                <li >
+                  <%= link_to 'Relaja tu Cuerpo', infographics_display_pages_path, method: :get %>
+                </li>
+                <li>
+                  <%= link_to 'Relaja tu Mente', long_audio_display_pages_path %>
+                </li>
+                <li class="has-dropdown">
+                  <a href="#">
+                    Respiraciones
+                  </a>
+                  <ul>
+                    <li>
+                      <%= link_to 'Respiración Cuadrada', resp_cuadrada_games_path %>
+                    </li>
+                    <li>
+                      <%= link_to 'Respiración Guiada', resp_guiada_games_path %>
+                    </li>
+                    <li>
+                      <%= link_to 'Respiración Alternada', resp_alternada_games_path %>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li class="has-dropdown">
+              <a href="#">
+                Evalúate
+              </a>
+              <ul>
+                <li >
+                  <%= link_to 'Estrés', new_survey_stress2_survey_path%>
+                </li>
+                <li>
+                  <%= link_to 'Ansiedad', new_survey_stress_survey_path%>
+                </li>
+                <li>
+                  <%= link_to 'Sueño', new_survey_sleep_survey_path%>
+                </li>
+              </ul>
+            </li>
+            <li class="has-dropdown">
+              <a href="#">
+                Reserva de Horas
+              </a>
+                  <ul>
+                    <li>
+                      <%= link_to 'Reservar Hora', user_calendar_display_path, method: :get %>
+                    </li>
+                    <li>
+                      <%= link_to 'Horas Reservadas', user_hours_display_path, method: :get %>
+                    </li>
+                  </ul>
+            </li>
+            <li class="has-dropdown">
+              <a href="#">
+                Tu Cuenta
+              </a>
+              <ul>
+                <li >
+                  <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+                </li>
+                <li>
+                  <%= link_to 'Editar Perfil', edit_user_registration_path %>
+                </li>
+                <% if current_user.admin%>
+                    <li >
+                      <%= link_to 'Admin', admin_content_display_path %>
+                    </li>
+                <% end %>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!--end of menu module-->
+      </div>
+      <!--end of module group-->
+      <% end %>
+    </div>
+  </nav>
+</div>
+

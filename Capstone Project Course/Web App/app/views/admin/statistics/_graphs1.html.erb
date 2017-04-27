@@ -1,0 +1,52 @@
+<section>
+  <div class="row">
+    <div class="col-sm-12">
+      <%= user_count(type) %>
+    </div>
+  </div>
+
+  <br>
+  <div class="row">
+    <div class="col-sm-1">
+    </div>
+    <div class="col-sm-4">
+      <%= worker_count_by_gender(type) %>
+    </div>
+    <div class="row col-sm-7">
+      <%= views_by_media_type(type) %>
+    </div>
+    <div class="row col-sm-7"  style="top: 10px;">
+      <%= user_count_by_gender(type) %>
+    </div>
+  </div>
+
+  <br>
+  <div class="row">
+    <div class="col-sm-6">
+      <%= logs_by_month(type) %>
+    </div>
+    <div class="col-sm-6">
+      <%= user_count_by_month(type) %>
+    </div>
+  </div>
+
+  <br>
+  <div class="row">
+    <div class="col-sm-4">
+      <%= imagery_by_views(type) %>
+    </div>
+    <div class="col-sm-4">
+      <%= user_count_by_career_year(type) %>
+    </div>
+    <div class="col-sm-4">
+      <%= infographics_by_views(type)%>
+    </div>
+  </div>
+
+  <br>
+  <div class="row">
+    <div class="col-sm-12">
+      <%= user_count_by_career(type) %>
+    </div>
+  </div>
+</section>

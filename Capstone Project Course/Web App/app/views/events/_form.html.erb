@@ -1,0 +1,102 @@
+<div class="row", style='margin-top: 40px;'}>
+</div>
+<div class="row">
+<div class="col-sm-1">
+</div>
+<div class="col-sm-10">
+  <%= simple_form_for(@event) do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+    <div class="input-with-label text-left">
+        <span>Tipo de Actividad:</span>
+        <%= f.input :event_type_id, label:false, :input_html => {:class => "select-option"}, required:true, collection: @event_types, value_method: :id, label_method: :name %>
+    </div>
+
+    <div class="input-with-label text-left">
+        <span>Profesional:</span>
+    <%= f.input :host_id, label:false, :input_html => {:class => "select-option", :placeholder => "hola"}, required:true, collection: @teachers, value_method: :id, label_method: :name %>
+    </div>
+
+    <div class="input-with-label text-left">
+        <span>Campus:</span>
+    <%= f.input :faculty_id, required: true, label:false, :input_html => {:class => "select-option"}, required:true, collection: @faculties, value_method: :id, label_method: :name %>
+    </div>
+
+    <div class="input-with-label text-left">
+        <span>Sala:</span>
+    <%= f.input :location, label:false, required: true %>
+    </div>
+
+    <div class="input-with-label text-left">
+        <span>Capacidad:</span>
+    <%= f.input :capacity, required: true, label:false, :input_html => {:class => "select-option"}, collection: 1..15 %>
+    </div>
+
+    <%= f.input :created_by, :as => :hidden, :input_html => {:value => @current_user.id}, value_method: :id%>
+
+    <div class="input-with-label text-left">
+        <span>Día:</span>
+    <%= f.input :day_id, label:false, :input_html => {:class => "select-option"}, required:true, collection: @days, value_method: :id, label_method: :spanish_day %>
+    </div>
+
+    <div class="input-with-label text-left">
+        <span>Hora de Inicio:</span>
+    </div>
+    <div class='input-group date' id='datetimepicker2'>
+      <%= f.input :start_hour, required: true, as: :string, :input_html => {:class => "form-control"}, :label => false%>
+      <span class="input-group-addon">
+        <span class="glyphicon glyphicon-time"></span>
+      </span>
+    </div>
+    <br></br>
+    <div class="input-with-label text-left">
+        <span>Hora de Término:</span>
+    </div>
+    <div class='input-group date' id='datetimepicker1'>
+      <%= f.input :end_hour, required: true, as: :string, :input_html => {:class => "form-control"}, :label => false%>
+      <span class="input-group-addon">
+        <span class="glyphicon glyphicon-time"></span>
+      </span>
+    </div>
+    <br></br>
+
+   <!-- <div class="input-with-label text-left">
+      <span>Repetir</span>
+    </div>
+    <input type="checkbox" class="js-switch" id="botoncito"/>
+    <br></br> -->
+    
+    <div id="extra">
+    <div class="input-with-label text-left">
+      <span>Désde:</span>
+    </div>
+    <%= f.input :initial_date, label:false, input_html: { value: nil, :class => "datepicker", :id => 'input1'}, as: :date_picker, required: true %>
+    <div class="input-with-label text-left">
+      <span>Hasta:</span>
+    </div>
+    <%= f.input :final_date, label:false, input_html: { value: nil, :class => "datepicker", :id => 'input2'}, as: :date_picker, required: true %>
+    </div>
+
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, 'Agregar'%>
+  </div>
+
+  </div>
+<% end %>
+</div>
+<div class="col-sm-1">
+</div>
+<br>
+
+<!--<script>
+  var elem = document.querySelector('.js-switch');
+  var init = new Switchery(elem);
+  $('[id$=extra]').hide();
+  elem.onchange = function() {
+    if(elem.checked)
+      $('[id$=extra]').show();
+    else
+      $('[id$=extra]').hide();
+  };
+</script> -->

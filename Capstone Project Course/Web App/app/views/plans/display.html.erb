@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <%= stylesheet_link_tag  "plans" %>
+</head>
+
+<body class="scroll-assist">
+
+<div class="nav-container">
+  <a id="top"></a>
+  <nav>
+    <%= render 'layouts/nav_transparent_final'%>
+  </nav>
+</div>
+
+<div class="main-container main-response image-bg overlay">
+
+  <div class="background-image-holder plans">
+    <%= image_tag("foundry/sunset.jpg", class: "background-image", alt: "image")%>
+  </div>
+
+
+  <section class="programs">
+
+    <div class="pagespan container">
+      <div class="row">
+        <div class="col-sm-6 intial">
+          <div class="wrap">
+            <h4> Programas </h4>
+            <div class="scrollbar">
+              <div class="handle">
+                <div class="mousearea"></div>
+              </div>
+            </div>
+            <div class="frame smart" id="smart">
+              <ul class="items">
+                <div hidden id='current'> </div>
+                  <% @programs.each do |program| %>
+                    <li class="list-item" data-id="<%= program['id'] %>"
+                        data-sound_count="<%= program['sound_sequences'].count %>"
+                        data-current_sound = "<%=@current_sounds[program['id']]%>"
+                        id = <%="program#{program['id']}" %>
+                    >
+                      <%= program['name'] %>
+                    </li>
+                    <% program['sound_sequences'].each_with_index do |sec,j| %>
+                        <% if sec['sound'] %>
+                            <div hidden id=<%="Sound#{program['id']}-#{j}"%>
+                                data-id=<%=sec['sound']['id']%>
+                                 data-name=<%=sec['sound']['name']%>
+                                     data-description=<%=sec['sound']['description']%>
+                                 data-order=<%=sec['order']%>
+                                     data-duration=<%=sec['sound']['duration']%>
+                                 data-file=<%=sec['sound']['sound_url']%>
+                            >
+                            </div>
+                            <% end %>
+                    <% end %>
+              <% end %>
+              </ul>
+            </div>
+            <ul class="pages"></ul>
+          </div>
+        </div>
+        <div class="col-sm-6 response">
+          <div class="wrap" id="wrap-response">
+            <h4>Ejercicios</h4>
+            <div class="scrollbar">
+              <div class="handle">
+                <div class="mousearea"></div>
+              </div>
+            </div>
+            <div class="frame smart" id="smart-response">
+              <ul class="items items-response">
+              </ul>
+            </div>
+            <ul class="pages"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<audio id='barrita'>
+  <source id="barritasource" src="" type="audio/mp3">
+</audio>
+</body>
+</html>
+

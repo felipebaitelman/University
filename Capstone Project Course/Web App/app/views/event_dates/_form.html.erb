@@ -1,0 +1,46 @@
+<%= simple_form_for(@event_date) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    
+    <div class="input-with-label text-left">
+        <span>Inicio:</span>
+    </div>
+    <div class='input-group date' id='datetimepicker3'>
+      <%= f.input :start_date, required: true, as: :string, :input_html => {:class => "form-control"}, :label => false%>
+      <span class="input-group-addon">
+        <span class="glyphicon glyphicon-time"></span>
+      </span>
+    </div>
+    <br></br>
+    <div class="input-with-label text-left">
+        <span>Fin:</span>
+    </div>
+    <div class='input-group date' id='datetimepicker4'>
+      <%= f.input :end_date, required: true, as: :string, :input_html => {:class => "form-control"}, :label => false%>
+      <span class="input-group-addon">
+        <span class="glyphicon glyphicon-time"></span>
+      </span>
+    </div>
+    <br></br>
+    <div class="input-with-label text-left">
+        <span>Profesional:</span>
+    <%= f.input :host_id, label:false, :input_html => {:class => "select-option", :placeholder => "hola"}, required:true, collection: @teachers, value_method: :id, label_method: :name %>
+    </div>
+    <div class="input-with-label text-left">
+        <span>Sala:</span>
+    </div>
+    <%= f.input :location, label: false %>
+    <div class="input-with-label text-left">
+        <span>Capacidad:</span>
+    <%= f.input :capacity, required: true, label:false, :input_html => {:class => "select-option"}, collection: 1..15 %>
+    </div>
+  </div>
+
+
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+  <br></br>
+<% end %>

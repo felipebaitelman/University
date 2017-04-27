@@ -1,0 +1,65 @@
+<div class="nav-container">
+  <nav>
+    <div class="nav-bar">
+      <div class="module left">
+        <a href="">
+          <b><%= link_to 'Relax UC', root_path, method: :get, class: "navbar-brand page-scroll", style: "color: gray" %></b>
+        </a>
+      </div>
+      <% if user_signed_in? %>
+          <div class="module widget-handle mobile-toggle right visible-sm visible-xs">
+            <i class="ti-menu"></i>
+          </div>
+          <div class="module-group right">
+            <div class="module left">
+              <ul class="menu">
+                <% if current_user.super_admin%>
+                    <li >
+                      <%= link_to 'Admin Management', admin_management_index_path %>
+                    </li>
+                <% end %>
+                <li>
+                  <%= link_to 'Estadísticas', admin_statistics_display_path %>
+                </li>
+                <li>
+                  <%= link_to 'Contenido', admin_content_display_path %>
+                </li>
+                <li class="has-dropdown">
+                  <a href="#">
+                    Calendario
+                  </a>
+                  <ul>
+                    <li>
+                      <%= link_to 'Crear Horario',  admin_calendar_display_path%>
+                    </li>
+                    <li>
+                      <%= link_to 'Horario General',  admin_calendar_global_display_path%>
+                    </li>
+                  </ul>
+                </li>
+
+
+                <li class="has-dropdown">
+                  <a href="#">
+                    Tu Cuenta
+                  </a>
+                  <ul>
+                    <li >
+                      <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+                    </li>
+                    <li>
+                      <%= link_to 'Editar Perfil', edit_user_registration_path %>
+                    </li>
+                  </ul>
+                </li>
+
+              </ul>
+            </div>
+            <!--end of menu module-->
+          </div>
+          <!--end of module group-->
+      <% end %>
+    </div>
+  </nav>
+</div>
+

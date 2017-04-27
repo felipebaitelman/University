@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<body class="scroll-assist">
+	<div class="nav-container">
+	  <a id="top"></a>
+	  <nav>
+	    <%= render 'layouts/nav_admin_final'%>
+	  </nav>
+	</div>
+
+  <div class="row">
+	<div class="col-sm-3">
+		<%= render 'events/form'%>
+	</div>
+	<div class="col-sm-8">
+	<div id="calendar"></div>
+	</div>
+    <div class="col-sm-1"></div>
+  </div>
+  <div id="eventContent" title="Event Details" style="display:none;">
+	    
+	    Día: <span id="day"></span><br>
+	    Profesional: <span id="professor"></span><br>
+	    Campus: <span id="campus"></span><br>
+	    Sala: <span id="class"></span><br>
+	    
+	    Capacidad Total <span id="totalcap"></span><br>
+	    <p id="eventInfo"></p>
+	    
+	    <button><strong><a id="cancel" class='btn' type='submit'>Cancelar Evento</a></strong></button>
+	    <!--<button><strong><a id="edit" class='btn' type='submit'>Modificar Evento</a></strong></button>-->
+	    
+	    
+	</div>
+</body>
+</html>

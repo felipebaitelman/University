@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<body class="scroll-assist">
+<div class="nav-container">
+  <a id="top"></a>
+  <nav>
+    <%= render 'layouts/nav_admin_final'%>
+  </nav>
+</div>
+<div class="main-container main-response">
+
+
+  <section class="page-title page-title-4 bg-secondary">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="uppercase mb0"> Contenido Dinámico</h1>
+          <br>
+          <p class="lead mb64 titlehide">
+            Selecciona el tipo de contenido multimedia que deseas crear, eliminar o modificar.
+          </p>
+        </div>
+      </div>
+      <!--end of row-->
+    </div>
+    <!--end of container-->
+  </section>
+
+
+  <section>
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-11 text">
+        <h4 class="uppercase mb16"><a><%= link_to 'Naturaleza', media_videos_path%></a></h4>
+        <br>
+        <h4 class="uppercase mb16"><a><%= link_to 'Imaginerías', media_sounds_path%></a></h4>
+        <br>
+        <h4 class="uppercase mb16"><a><%= link_to 'Secuencias', infographics_path%></a></h4>
+        <br>
+        <h4 class="uppercase mb16"><a><%= link_to 'Programas', programs_path%></a></h4>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

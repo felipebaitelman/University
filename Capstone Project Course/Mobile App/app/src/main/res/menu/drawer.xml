@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/menu_top"
+        android:checkableBehavior="single">
+        <item android:id="@+id/drawer_home"
+              android:checkable="true"
+              android:checked="true"
+              android:icon="@drawable/ic_home_black_24dp"
+              android:title="@string/drawer_home" />
+        <item android:id="@+id/drawer_excercises"
+              android:checkable="true"
+              android:checked="false"
+              android:icon="@drawable/ic_favorite_black_24dp"
+              android:title="@string/main_menu_exercises" />
+        <item android:id="@+id/drawer_sequences"
+              android:checkable="true"
+              android:checked="false"
+              android:icon="@drawable/ic_collections_black_24dp"
+              android:title="@string/main_menu_sequences" />
+        <item android:id="@+id/drawer_imaginery"
+              android:checkable="true"
+              android:checked="false"
+              android:icon="@drawable/ic_audiotrack_black_24dp"
+              android:title="@string/main_menu_imaginary"/>
+        <item android:id="@+id/drawer_ambience"
+              android:checkable="true"
+              android:checked="false"
+              android:icon="@drawable/ic_movie_creation_black_24dp"
+              android:title="@string/main_menu_ambience" />
+              android:title="@string/main_menu_ambient_sounds" />
+        <item android:id="@+id/drawer_exercise_plan"
+              android:checkable="true"
+              android:checked="false"
+              android:icon="@drawable/ic_settings_system_daydream_black_24dp"
+              android:title="@string/main_menu_exercise_plans" />
+        <item android:id="@+id/drawer_evaluations"
+              android:checkable="true"
+              android:checked="false"
+              android:icon="@drawable/ic_assignment_turned_in_black_24dp"
+              android:title="@string/main_menu_evaluations" />
+    </group>
+
+
+    <group
+        android:id="@+id/menu_bottom"
+        android:checkableBehavior="single">
+    <item android:id="@+id/drawer_request_appointment"
+          android:checked="false"
+          android:checkable="true"
+          android:title="@string/drawer_request_appointment"
+          android:icon="@drawable/ic_event_black_24dp"/>
+    <item android:id="@+id/drawer_check_appointment"
+          android:checked="false"
+          android:checkable="true"
+          android:title="@string/drawer_check_appointment"
+          android:icon="@drawable/ic_view_agenda_black_24dp"/>
+
+    <item android:id="@+id/drawer_settings"
+          android:icon="@drawable/ic_settings_black_24dp"
+          android:checked="false"
+          android:checkable="true"
+          android:title="@string/drawer_settings" />
+    <item android:id="@+id/drawer_logout"
+          android:icon="@drawable/ic_exit_to_app_black_24dp"
+          android:checked="false"
+          android:checkable="true"
+          android:title="@string/drawer_logout" />
+    </group>
+
+</menu>

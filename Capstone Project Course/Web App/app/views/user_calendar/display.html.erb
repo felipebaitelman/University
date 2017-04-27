@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<body class="scroll-assist">
+	<div class="nav-container">
+	  <a id="top"></a>
+	  <nav>
+	    <%= render 'layouts/nav_white_final'%>
+	  </nav>
+	</div>
+
+  <div class="main-response2">
+  <div class="row">
+	<div class="col-sm-1">
+	</div>
+	<div class="col-sm-6">
+		<br></br>
+		<br></br>
+		<div class="form-inputs", id="searchfilters">
+			<div class="input-with-label text-left">
+		        <span>Profesional:</span>
+		    	<%= select_tag "teachers", options_from_collection_for_select(@teachers, 'id', 'name'),  include_blank: true%>
+		    </div>
+		    <br></br>
+		    <div class="input-with-label text-left">
+		        <span>Campus:</span>
+		    	<%= select_tag "campus", options_from_collection_for_select(@faculties, 'id', 'name'),  include_blank: true%>
+		    </div>
+		    <br></br>
+		    <div class="input-with-label text-left">
+		        <span>Tipo de Actividad:</span>
+		    	<%=select_tag "event_type",  options_from_collection_for_select(@event_types, 'id', 'name'), include_blank: true%>
+		    </div>
+		    <br></br>
+		    <div class="form-actions">
+		    	<%=submit_tag 'Buscar', :type => 'submit', class: "btn", id: "search"%>
+		    </div>
+	    </div>
+
+	    <br></br>
+		<div id="usercalendar"></div>
+        <br></br>
+        <button type="submit" id="backbutton" class="btn">Volver</button>
+	</div>
+	<div class="col-sm-4">
+		<br></br>
+            <div class="col-md-11   col-sm-offset-1 " >
+                <h3 class="mb40 mb-xs-16">Elige la actividad adecuada para ti.</h3>
+                <div class="feature feature-3" id='consejeria'>
+                    <div class="left">
+                        <i class="pe-7s-target icon-sm"></i>
+                    </div>
+                    <div class="right">
+                        <h4 class="mb16">Consejerías</h4>
+                        <p align="justify">
+                            Son consultas de 60 minutos que te ayudarán a identificar sintomatología puntual que se presente e interfiera en un contexto académico, social o familiar y aprende a enfrentarla.
+                    </div>
+                </div>
+                <!--end of feature-->
+                <div class="feature feature-3" id='apoyo_grupal'>
+                    <div class="left">
+                        <i class="pe-7s-users icon-sm"></i>
+                    </div>
+                    <div class="right">
+                        <h4 class="mb16">Apoyo Grupal</h4>
+                        <p align="justify">
+                            Son talleres en grupos de un máximo de 12 personas. Son 4 sesiones mensuales de 90 minutos. Las sesiones tienen como objetivo: (a) entender la ansiedad, (b) aprender a calmar el cuerpo, (c) aprender a calmar la mente y (d) construir un estilo de vida para manejar la ansiedad y el estrés.
+                        </p>
+                    </div>
+                </div>
+                <!--end of feature-->
+                <div class="feature feature-3" id='mindfulness'>
+                    <div class="left">
+                        <i class="pe-7s-look icon-sm"></i>
+                    </div>
+                    <div class="right">
+                        <h4 class="mb16">Taller de Mindfulness</h4>
+                        <p align="justify">
+                            Mindfulness es una técnica de atención plena, donde se entrena la capacidad de concentración en el presente. Cada semana se realiza un ejercicio nuevo, por lo que los alumnos pueden optar por ir a una sesión o a todas. No es necesario haber practicado la técnica con anterioridad para poder asistir. Las sesiones son gratuitas y no requieren de vestimenta específica.
+                        </p>
+                    </div>
+                </div>
+                <!--end of feature-->
+                <div class="feature feature-3" id='yoga'>
+                    <div class="left">
+                        <i class="pe-7s-leaf icon-sm right"></i>
+                    </div>
+                    <div class="right">
+                        <h4 class="mb16">Taller de Yoga</h4>
+                        <p align="justify">
+                            Los clases de yoga se realizan de manera permanente desde marzo a enero. Cada sesión es una instancia distinta para poder trabajar con el cuerpo, aprender a calmar la mente y encontrar la relajación a través del movimiento. No es necesario haber practicado la técnica con anterioridad para poder asistir. Se recomienda traer ropa cómoda, aunque no es necesario. Mat de yoga incluido.
+                        </p>
+                    </div>
+                </div>
+            </div>
+	</div>
+	<div class="col-sm-1">
+	</div>
+  </div>
+
+	<div id="eventContent" title="Event Details" style="display:none;">
+	    Hora Inicio: <span id="startTime"></span><br>
+	    Hora Fin: <span id="endTime"></span><br><br>
+	    Profesional: <span id="professor"></span><br>
+	    Campus: <span id="faculty"></span><br>
+	    Sala: <span id="class"></span><br>
+	    Capacidad Disponible: <span id="availablecap"></span><br>
+	    Capacidad Total <span id="totalcap"></span><br>
+	    <p id="eventInfo"></p>
+
+	    <button><strong><a id="book" class='btn' type='submit'>Cancelar Reserva</a></strong></button>
+	</div>
+  </div>
+<footer></footer>
+</body>
+</html>

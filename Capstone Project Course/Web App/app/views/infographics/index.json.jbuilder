@@ -1,0 +1,1 @@
+json.array! @infographics, partial: 'infographics/infographic', as: :infographic

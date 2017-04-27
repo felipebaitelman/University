@@ -1,0 +1,1 @@
+json.partial! "stress2_surveys/stress2_survey", stress2_survey: @stress2_survey

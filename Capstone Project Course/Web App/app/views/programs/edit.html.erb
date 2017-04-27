@@ -1,0 +1,76 @@
+<body>
+
+<div class="wrapper-fix">
+
+<div class="nav-container">
+  <%= render "layouts/nav_admin_final" %>
+</div>
+
+<div class="main-container">
+  <section class="page-title page-title-3 bg-secondary">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="uppercase mb0">Editar programa</h1>
+        </div>
+      </div>
+      <!--end of row-->
+    </div>
+    <!--end of container-->
+  </section>
+  <br>
+
+  <%= render 'form', program: @program %>
+
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-8">
+      <h5 class="uppercase mb8"><b>Editar Contenidos</b></h5>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-11">
+      <div class="lightbox-grid square-thumbs" data-gallery-title="Gallery">
+        <ul>
+          <% @program.sounds.each_with_index do |sound,i| %>
+              <li>
+                <p><%=number_field_tag "OrderP#{i}", sound.sound_sequences.first.order, within: 1...@program.sounds.count+1%></p>
+                <%= audio_tag sound.sound_file, controls:true %>
+                <p><%=text_field_tag "nameP#{i}", sound.name %></p>
+                <p><%=text_field_tag "descriptionP#{i}", sound.description %></p>
+                <p> <%=sound.sound_file.original_filename%></p>
+                <div hidden id=<%="Sound#{i}"%> data-sound_id=<%=sound.id%>> </div>
+              </li>
+          <% end %>
+          <div hidden id='sound_count' data-count=<%=@program.sounds.count%>> </div>
+          <div hidden id='program_id' data-id=<%=@program.id%>> </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" id="submit_bP">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-2">
+      <div class="actions">
+        <button type="submit" class="btn btn-default" formmethod="post" id="order2"> Actualizar Contenido</button>
+      </div>
+    </div>
+  </div>
+  <div id = "alert_placeholder2"></div>
+  <br>
+
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-11">
+      <%= link_to 'Atrás', programs_path %>
+    </div>
+  </div>
+
+</div>
+<div class="push"></div>
+</div>
+<div class="footer-fix"></div>
+</body>

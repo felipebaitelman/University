@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+    <body class="scroll-assist">
+
+        <div class="nav-container">
+            <a id="top"></a>
+            <nav>
+                <%= render 'layouts/nav_white_final'%>
+            </nav>
+        </div>
+        <div class="main-container main-response">
+          <section>
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-4 text-center">
+                        <h4 class="uppercase mb16"> ¡Concéntrate! </h4>
+                        <p align="justify">
+                          Esta secuencia de Yoga te ayudará a lograr un estado de concentración, para situaciones
+                          en las que es necesario lograr efocarse. Perfecta para antes de una prueba.
+                        </p>
+                      </div>
+                    </div>
+                    <!--end of row-->
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="lightbox-grid square-thumbs" data-gallery-title="Gallery1">
+                            <ul>
+                              <% if @info_pics['Concéntrate'] %>
+                                  <li>
+                                    <% if @info_pics['Concéntrate'][0]%>
+                                        <a href=<%=@info_pics['Concéntrate'][0].image_file%> data-lightbox="true"
+                                           data-title="<%=@info_pics['Concéntrate'][0].description%>" id = 'Concéntrate' >
+                                          <div class="background-image-holder">
+                                            <%= image_tag("sequences/S1.png", class: "background-image", alt: "image") %>
+                                          </div>
+                                        </a>
+                                    <%end%>
+                                  </li>
+                                  <% @info_pics['Concéntrate'].drop(1).each do |image| %>
+                                      <% if image %>
+                                          <li class="hide">
+                                            <a href=<%=image.image_file%> data-lightbox="true"
+                                               data-title="<%=image.description%>">
+                                              <div class="background-image-holder">
+                                                <img alt="image" class="background-image" src=<%=image.image_file%> />
+                                              </div>
+                                            </a>
+                                          </li>
+                                      <% end %>
+                                  <% end %>
+                              <%end%>
+                            </ul>
+                          </div>
+                          <!--end of lightbox gallery-->
+                        </div>
+                      </div>
+                      <!--end of row-->
+                    </div>
+                  </div>
+                  <!--end of container-->
+                </div>
+
+                <div class="col-sm-4">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-4 text-center">
+                        <h4 class="uppercase mb16"> ¡Desactívate! </h4>
+                        <p align="justify">
+                          Utiliza estos ejercicios antes de acostarte o cuando necesites relajarte. Te ayudarán a dejar de lado
+                          las tensiones corporales y a llegar a un estado de calma y tranquilidad.
+                        </p>
+                      </div>
+                    </div>
+                    <!--end of row-->
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="lightbox-grid square-thumbs" data-gallery-title="Gallery2">
+                            <ul>
+                              <% if @info_pics['Desactívate'] %>
+                                  <li>
+                                    <% if @info_pics['Desactívate'][0]%>
+                                        <a href=<%=@info_pics['Desactívate'][0].image_file%> data-lightbox="true"
+                                           data-title="<%=@info_pics['Desactívate'][0].description%>" id = 'Desactívate'>
+                                          <div class="background-image-holder">
+                                            <%= image_tag("sequences/S2.png", class: "background-image", alt: "image") %>
+                                          </div>
+                                        </a>
+                                    <%end%>
+                                  </li>
+                                  <% @info_pics['Desactívate'].drop(1).each do |image|%>
+                                      <% if image %>
+                                          <li class="hide">
+                                            <a href=<%=image.image_file%> data-lightbox="true"
+                                               data-title="<%=image.description%>">
+                                              <div class="background-image-holder">
+                                                <img alt="image" class="background-image" src=<%=image.image_file%> />
+                                              </div>
+                                            </a>
+                                          </li>
+                                      <% end %>
+                                  <% end %>
+                              <%end%>
+                            </ul>
+                          </div>
+                          <!--end of lightbox gallery-->
+                        </div>
+                      </div>
+                      <!--end of row-->
+                    </div>
+                  </div>
+                  <!--end of container-->
+                </div>
+
+                <div class="col-sm-4">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-4 text-center">
+                        <h4 class="uppercase mb16"> ¡Empodérate! </h4>
+                        <p align="justify">
+                          Esta secuencia te servirá para ganar confianza y tomar control de tu propia mente y cuerpo. Es perfecta para antes
+                          de una entrevista demandante o una presentación oral.
+                        </p>
+                      </div>
+                    </div>
+                    <!--end of row-->
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="lightbox-grid square-thumbs" data-gallery-title="Gallery3">
+                            <ul>
+                              <% if @info_pics['Empodérate'] %>
+                                  <li>
+                                    <% if @info_pics['Empodérate'][0]%>
+                                        <a href=<%=@info_pics['Empodérate'][0].image_file%> data-lightbox="true"
+                                           data-title="<%=@info_pics['Empodérate'][0].description%>" id ='Empodérate' >
+                                          <div class="background-image-holder">
+                                            <%= image_tag("sequences/S3.png", class: "background-image", alt: "image") %>
+                                          </div>
+                                        </a>
+                                    <%end%>
+                                  </li>
+                                  <% @info_pics['Empodérate'].drop(1).each do |image|%>
+                                      <% if image %>
+                                          <li class="hide">
+                                            <a href=<%=image.image_file%> data-lightbox="true"
+                                               data-title="<%=image.description%>">
+                                              <div class="background-image-holder">
+                                                <img alt="image" class="background-image" src=<%=image.image_file%> />
+                                              </div>
+                                            </a>
+                                          </li>
+                                      <% end %>
+                                  <% end %>
+                              <% end %>
+                            </ul>
+                          </div>
+                          <!--end of lightbox gallery-->
+                        </div>
+                      </div>
+                      <!--end of row-->
+                      </div>
+                    </div>
+                  <!--end of container-->
+              </div>
+            </div>
+          </div>
+        </section>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,107 @@
+var ej2 = (function() {
+    var canv = document.getElementById("breath2");
+
+    if(canv!=null && canv.getContext)
+    {
+
+        var ctx = canv.getContext("2d");
+
+        var baloon = new Image();
+
+        baloon.onload = function()
+        {
+        };
+
+        baloon.src = "<%=image_path('baloon2.png')%>";
+
+        var completeWidth = 1640;
+        var completeHeight = 2145;
+
+        var smallScale = 0.08;
+        var deltaV = 0.01;
+
+        var curScale = smallScale;
+        var interTime = 1000.0/60.0;
+
+        var inhTime = 3000;
+        var exhTime = 6000;
+
+        var startTime = new Date().getTime();
+
+        var state = 0;
+
+        var textos = ["Inhala","Exhala"];
+
+        //Fuente del texto
+        var f = "30px Helvetica Neue";
+        var fontR = 255;
+        var fontG = 255;
+        var fontB = 255;
+
+        setInterval(function()
+            {
+
+                var endTime = new Date().getTime();
+
+                var curT = 0;
+
+                var globalScale = canv.width/500;
+
+
+                if(state == 0)
+                {
+                    curT = ((endTime-startTime)/inhTime);
+                    if((endTime-startTime)>=inhTime)
+                    {
+                        startTime = new Date().getTime();
+                        state=1;
+                    }
+                }
+                else
+                {
+                    curT = ((endTime-startTime)/exhTime);
+                    curT = 1.0-curT;
+                    if((endTime-startTime)>=exhTime)
+                    {
+                        startTime = new Date().getTime();
+                        state=0;
+                    }
+                }
+
+                var v = deltaV*curT;
+
+                if(v>deltaV)v=deltaV;
+
+                curScale = (smallScale*smallScale*smallScale)+((3*(v))/(4*Math.PI));
+
+                curScale = Math.pow(curScale,1.0/3.0);
+
+
+                var currWidth = curScale*completeWidth;
+                var currHeigth = curScale*completeHeight;
+
+                var x = (canv.width-currWidth)/2;
+                var y = (canv.height-currHeigth)/2;
+
+
+                var ball = new Image();
+
+                ball.onload = function()
+                {
+                    ctx.clearRect(0, 0, canv.width, canv.height);
+                    ctx.drawImage(ball,x,y,currWidth*globalScale,currHeigth*globalScale);
+                    ctx.font = f;
+                    ctx.fillStyle = "rgb("+fontR+","+fontG+","+fontB+")";
+                    ctx.textAlign = "center";
+                    ctx.fillText(textos[state], canv.width/2, canv.height/7);
+                };
+
+              	ball.src = "<%=image_path('baloon2.png')%>";
+
+            }
+            , interTime);
+    }
+});
+
+$(document).on('turbolinks:load', ej2);
+

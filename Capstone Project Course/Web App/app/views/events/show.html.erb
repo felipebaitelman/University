@@ -1,0 +1,47 @@
+<p>
+  <strong>Event type:</strong>
+  <%= @event.event_type_id %>
+</p>
+
+<p>
+  <strong>Host:</strong>
+  <%= @event.host_id %>
+</p>
+
+<p>
+  <strong>Faculty:</strong>
+  <%= @event.faculty_id %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @event.location %>
+</p>
+
+<p>
+  <strong>Capacity:</strong>
+  <%= @event.capacity %>
+</p>
+
+<p>
+  <strong>Created by:</strong>
+  <%= @event.created_by %>
+</p>
+
+<p>
+  <strong>Start hour:</strong>
+  <%= @event.start_hour %>
+</p>
+
+<p>
+  <strong>End hour:</strong>
+  <%= @event.end_hour %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @event.day_id %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

@@ -1,0 +1,32 @@
+<p>
+  <strong>Event:</strong>
+  <%= @event_date.event_id %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @event_date.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @event_date.end_date %>
+</p>
+
+<p>
+  <strong>Host:</strong>
+  <%= @event_date.host_id %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @event_date.location %>
+</p>
+
+<p>
+  <strong>Capacity:</strong>
+  <%= @event_date.capacity %>
+</p>
+
+<%= link_to 'Edit', edit_event_date_path(@event_date) %> |
+<%= link_to 'Back', admin_calendar_global_display_path, method: :get %>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+
+<body class="template">
+
+	<div class="nav-container">
+	  <a id="top"></a>
+	  <nav class="bg-dark">
+		<%= render 'layouts/nav_transparent_final'%>
+	  </nav>
+	</div>
+
+	<section class="cover fullscreen image-bg overlay">
+        <div class="background-image-holder">
+            <%= image_tag("foundry/games.jpg", class: "background-image", alt: "image")%>
+        </div>
+        <div class="container v-align-transform games">
+            <div class="row">
+                <div class="col-sm-3"></div>
+		        <div class="col-sm-6">
+		          <canvas id="breath1" width="500" height="500"> </canvas>
+		        </div>
+		        <div class="col-sm-3"></div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

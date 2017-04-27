@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <%= stylesheet_link_tag  "sly" %>
+</head>
+
+<body class="scroll-assist">
+<div class="wrapper-fix">
+<div class="nav-container">
+  <a id="top"></a>
+  <nav>
+    <%= render 'layouts/nav_transparent_final'%>
+  </nav>
+</div>
+<div class="main-container main-response" id="imagineriaContainer" >
+  <section class="image-bg fullscreen overlay bg-dark">
+    <div class="fs-vid-background-imagery" id="imagery-video">
+      <video autoplay muted loop>
+        <!--If want to do random video this is the place-->
+        <%= tag("source", src: video_path("lake2.mp4"), type: "video/mp4")%>
+      </video>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="pagespan container" id='slyBar'>
+          <div class="wrap">
+            <div class="handle">
+              <div class="mousearea"></div>
+            </div>
+          </div>
+          <button class="btn prev"><i class="icon-angle-left"></i></button>
+          <button class="btn next"><i class="icon-angle-right"></i></button>
+          <div class="frame" id="centered">
+            <ul class="clearfix">
+              <% @allLongAudio.each do |long_audio| %>
+                  <% if long_audio %>
+                      <li>
+                        <div class="col-sm-12 text-center" style="margin-top: 0px" style="margin-bottom: 0px" style="margin-left: 0px" style="margin-right: 0px">
+                          <h4 class="uppercase mb10"><%=long_audio.name%></h4>
+                          <p class="lead mb8">
+                            <%=long_audio.description%>
+                          </p>
+                          <div id=<%="path#{long_audio.id}"%> data-url=<%=long_audio.sound_file%>> </div>
+                          <div class="modal-container mb8">
+                            <div class="play-button large light inline playbut" id=<%=long_audio.id%>></div>
+                            <div class="foundry_modal no-bg">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                  <% end %>
+              <%end%>
+            </ul>
+          </div>
+          <ul class="pages">
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <audio controls="" id='barrita'>
+    <source id="barritasource" src="" type="audio/mp3">
+  </audio>
+</div>
+  <div class="push"></div>
+</div>
+<div class="footer-fix"></div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<body>
+<div class="wrapper-fix">
+  <div class="nav-container">
+    <%= render "layouts/nav_admin_final" %>
+  </div>
+  <div class="main-container main-response">
+    <section class="page-title page-title-3 bg-secondary">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="uppercase mb0">Admins Actuales</h1>
+          </div>
+        </div>
+        <!--end of row-->
+      </div>
+      <!--end of container-->
+    </section>
+    <br>
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-10">
+        <div class="table table-responsive">
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>email</th>
+              <th>Edad</th>
+              <th>Admin Status</th>
+              <th colspan="3"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @users.each do |user| %>
+                <tr>
+                  <td><%= user.email %></td>
+                  <td><%= user.age %></td>
+                  <td><%= link_to 'Desactivar', deauthorize_user_path(user), method: :patch %></td>
+                </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class row="col-sm-1"></div>
+    </div>
+    <br>
+  </div>
+  <div class="container">
+    <br>
+    <div class = 'row'>
+      <%= link_to 'Mostrar Todos', admin_management_index_all_path %>
+    </div>
+  </div>
+  <div class="push"></div>
+</div>
+<div class="footer-fix"></div>
+</body>

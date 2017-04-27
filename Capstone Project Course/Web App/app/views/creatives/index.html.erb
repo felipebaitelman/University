@@ -1,0 +1,6 @@
+<%= render 'layouts/nav_transparent_final' %>
+<%= render 'header' %>
+<% if user_signed_in? %>
+<% else %>
+<%= render 'bg_primary'%>
+<%end%>

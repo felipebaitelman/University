@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<body class="scroll-assist">
+<div class="nav-container">
+  <a id="top"></a>
+  <nav>
+    <%= render 'layouts/nav_admin_final'%>
+  </nav>
+</div>
+<div class="main-container stats">
+  <section class="page-title page-title-4 bg-secondary">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="uppercase mb0"> Central de Estadísticas</h1>
+          <br>
+          <p class="lead mb64 titlehide">
+            ¡Encuentra todos los datos que necesitas para administrar tu aplicación!
+          </p>
+        </div>
+      </div>
+      <!--end of row-->
+    </div>
+    <!--end of container-->
+  </section>
+  <div class="container">
+    <br>
+    <div class = 'row'>
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-2">
+      <button type ='button' id = 'stat_mensual' class= 'btn btn-filled btn-sm mb32'> Mensual</button>
+      </div>
+      <div class="col-md-2">
+      <button type ='button' id = 'stat_anual' class= 'btn btn-filled btn-sm mb32'> Anual</button>
+      </div>
+      <div class="col-md-2">
+      <button type ='button' id = 'stat_all' class= 'btn btn-filled btn-sm mb32'> Acumulado</button>
+      </div>
+      <div class="col-md-3">
+      </div>
+    </div>
+    <div id="stats">
+      <%= render 'graphs1', type: 'month' %>
+    </div>
+  </div>
+</div>
+</body>
+</html>

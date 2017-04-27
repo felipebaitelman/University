@@ -1,0 +1,198 @@
+/****** PLACE YOUR CUSTOM STYLES HERE ******/
+
+.navbar-brand{
+	color: #fff;
+}
+.navbar-brand:hover{
+    color: #47b475 !important;
+}
+
+.navbarwhite-brand{
+	color: grey;
+	float: left;
+	height: 50px;
+	padding: 15px 15px;
+	font-size: 18px;
+	line-height: 20px;
+}
+
+.background-image-holder{
+	display: block;
+    margin: 0 auto;
+}
+
+audio { 
+   display:none;
+}
+
+.fc-agendaWeek-view tr {
+    height: 35px;
+}
+
+.fc-today {
+	background-color: #fff !important;  
+}
+
+.input-group .btn {
+	height:50px;
+	margin-bottom: 25px;
+}
+
+.fc-event-time{
+   display : none;
+}
+
+br {
+   margin-top: 100px;
+}
+
+.booked {
+    font-size: 11px !important;
+    text-align: center;
+    padding: .4em .833em;
+    line-height: 1;
+    border-radius: .28571429rem;
+    border-color: #FF6961;
+    display: inline-block;
+    font-weight: 600;
+    color: #FF6961;
+    margin-right: 0px;
+}
+
+.sign-up-form {
+    margin-top: 55px;
+    position: relative;
+    height: 100vh;
+    overflow: auto !important;
+}
+
+.full{
+    overflow: auto !important;
+}
+
+.stats {
+    background: #DCDCDC;
+}
+
+.media-types {
+    background: blue;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+.main-response {
+    height: 100%;
+}
+
+.main-response2 {
+    height: 100%;
+}
+
+footer {
+    height: 10%;
+}
+
+.pt0.pb0 {
+    height: 100%;
+}
+
+.slider-all-controls {
+    height: 100%;
+}
+
+.slides {
+    height: 100%;
+}
+
+.slides li {
+    height: 100%;
+}
+
+html, body, form{
+    height: 100%;
+}
+
+.wrapper-fix{
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -200px;
+}
+
+.wrapper-fix2{
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -255px;
+}
+
+.push, .footer-fix {
+    margin: 0 auto 200px;
+}
+.footer-1 {
+    z-index: 999;
+}
+
+.long_section {
+    height: 90%;
+}
+
+.plans{
+    opacity: 1 !important;
+}
+
+.btn-lg{
+    border-radius: 1px !important;
+}
+.games{
+    top: 50% !important;
+}
+
+
+
+
+
+.pagination-centered.alpha{
+    margin-left: 5%;
+}
+
+
+.pagination.pagination-centered.alpha > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #FFF;
+}
+
+.pagination li {
+    float: left;
+}
+
+.pagination li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.pagination li a:hover {
+    background-color: #FFF;
+}.v-align-transform-custom {
+    position: relative;
+    transform: translate3d(0, -50%, 0);
+    -webkit-transform: translate3d(0, -50%, 0);
+    top: 50%;
+    z-index: 2;
+}
+
+.btn.active, .btn:active {
+    background-color: #38905d;
+}

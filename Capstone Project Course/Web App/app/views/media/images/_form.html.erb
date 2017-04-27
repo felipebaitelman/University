@@ -1,0 +1,41 @@
+<%= form_for([:media, @image], html: { multipart: true }) do |f| %>
+    <% if @image.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(image.errors.count, "error") %> prohibited this image from being saved:</h2>
+
+      <ul>
+      <% image.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+    
+  </div>
+
+    <div class="field">
+      <%= f.label :image_file %>
+      <%= f.file_field :image_file %>
+    </div>
+
+    <!-- list of possible labes, ajax add new label-->
+
+    <div id="themes">
+      Select Theme to Add to Image&nbsp;&nbsp;<i id="tooltip" class="fa fa-question-circle" title="Selecciona todos los themes que desees agregar a la imagen."></i>&nbsp;<br/>
+      <%= select_tag 'Label', options_for_select(Theme.all.map{ |u| [u.name] }),{:multiple => true, :size => 5} %>
+    </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

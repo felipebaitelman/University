@@ -1,0 +1,39 @@
+
+<div class="nav-container">
+  <a id="top"></a>
+  <nav>
+    <%= render 'layouts/nav_white_final'%>
+  </nav>
+</div>
+<body>
+<div class="main-container main-response">
+  <section class="page-title page-title-4 bg-secondary">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="uppercase mb0"> Test de Estrés</h1>
+          <br>
+          <p class="lead mb64 titlehide">
+            Durante las últimas dos semanas, ¿con qué frecuencia sintió molestias por los siguientes problemas?
+          </p>
+          <p class="lead mb64 titleshow">
+            RESULTADO
+          </p>
+        </div>
+      </div>
+      <!--end of row-->
+    </div>
+    <!--end of container-->
+  </section>
+
+  <section>
+    <div class="row">
+      <div class="col-sm-1"> </div>
+      <div class="col-sm-8">
+        <%= render 'form', stress2_survey: [:survey, @stress2_survey] %>
+      </div>
+      <div class="col-sm-3"> </div>
+    </div>
+  </section>
+</div>
+</body>

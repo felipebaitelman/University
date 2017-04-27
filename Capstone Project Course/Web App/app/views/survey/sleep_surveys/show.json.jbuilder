@@ -1,0 +1,1 @@
+json.partial! "sleep_surveys/sleep_survey", sleep_survey: @sleep_survey

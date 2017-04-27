@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<body class="scroll-assist">
+<div class="wrapper-fix2">
+  <div class="nav-container">
+    <a id="top"></a>
+    <nav>
+      <%= render 'layouts/nav_transparent_final'%>
+    </nav>
+  </div>
+
+  <div class="main-container main-response image-bg overlay">
+    <div class="background-image-holder">
+      <%= image_tag("foundry/header.jpg", class: "background-image", alt: "image",
+                    id: 'background_image')%>
+    </div>
+    <section class="cover fullscreen full">
+
+
+      <div class="container sign-up-form">
+        <br>
+        <div class="row">
+          <div class="col-sm-6 col-sm-offset-3">
+            <div class="feature bordered text-center">
+              <h4 class="uppercase">Regístrate</h4>
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                  <%= devise_error_messages! %>
+              <div class="col-xs-12">
+              <%= f.email_field :email, autofocus: true, :class => 'input', :placeholder => 'Mail',
+                                :type => 'text', :required => true,
+                                :oninvalid => 'this.setCustomValidity("Debes ingresar tu mail")',
+                                :oninput => 'setCustomValidity("")' %>
+              </div>
+              <div class="col-xs-12">
+                <!--
+                <% if @minimum_password_length %>
+                    <#em>(<%= @minimum_password_length %> characters minimum)<#/em>
+                <% end %><br />
+                -->
+                <%= f.password_field :password, autocomplete: "off", :class => 'input',
+                                     :placeholder => 'Contraseña', :type => 'password' %>
+              </div>
+              <div class="col-xs-12">
+                <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'input',
+                                     :placeholder => 'Confirmar Contraseña', :type => 'password' %>
+              </div>
+
+                  <div class="col-xs-12">
+                    <%= f.text_field :name, :placeholder => 'Nombre', :type => 'text', :required => true,
+                                     :oninvalid => 'this.setCustomValidity("Debes ingresar tu nombre")',
+                                     :oninput => 'setCustomValidity("")' %>
+                  </div>
+
+              <div class="col-xs-12">
+                <%= f.number_field :rut, :min => '1', :class => 'input', :placeholder => 'Rut (sin puntos ni codigo verificador)',
+                                   :required => true, :max => '9999999999',
+                                   :oninvalid => 'this.setCustomValidity("Debes ingresar un rut válido")',
+                                   :oninput => 'setCustomValidity("")', :max => '9999999999' %>
+              </div>
+
+            <div class="col-xs-12">
+              <div class="select-option" id="dropdown_user">
+                <i class="ti-angle-down"></i>
+                <%= f.select :academic_type, ["Alumno","Funcionario"], :class => 'select', as: :text,
+                             :id => 'dropdown_user' %>
+              </div>
+            </div>
+            <div class="col-xs-7">
+              <div class="select-option">
+                <i class="ti-angle-down"></i>
+                <%= f.select :sex, ["Masculino", "Femenino"], :prompt => 'Sexo',
+                             :required => true, :oninvalid => 'this.setCustomValidity("Debes seleccionar tu sexo")',
+                             :oninput => 'setCustomValidity("")' %>
+              </div>
+            </div>
+              <div class="col-xs-5">
+                <%= f.number_field :age, :min => '1', :max => '200', :class => 'input',
+                                   :placeholder => 'Edad', autocomplete: "off", :required => true,
+                                   :oninvalid => 'this.setCustomValidity("Debes ingresar una edad válida")',
+                                   :oninput => 'setCustomValidity("")' %>
+              </div>
+
+              <div class="col-xs-7">
+                <div class="select-option">
+                  <i class="ti-angle-down"></i>
+                <%= f.select :school, [ "Acad Inter de Filosofía","Actividades Universitarias", "Actuación",
+                                        "Agronomía e Ingeniería Forestal", "Arquitectura", "Arte", "Astrofísica",
+                                        "Biblioteca", "CARA", "CEDETI", "Centro de Innovación", "Ciencia Política",
+                                        "Ciencias Biológicas", "Ciencias de la Salud", "Colegio Programas Doctorales",
+                                        "Comunicaciones", "College", "Construcción Civil", "Crisol", "Deportes",
+                                        "Derecho", "Dictuc", "DASE", "DAE", "DRSD", "Diseño", "Educación",
+                                        "Enfermería", "Escuela de Gobierno", "Estudios Urbanos", "Estética",
+                                        "Filosofía", "Física", "Geografía", "Historia", "Ingeniería",
+                                        "Ingeniería Biológica y Médica", "Ingeniería Comercial", "Letras",
+                                        "Matemática", "Matrícula", "Medicina", "Música", "Odontología", "PentaUC",
+                                        "Psicología", "Química", "Salud Estudiantil", "Sociología", "Teología",
+                                        "Trabajo Social", "Villarica", "Otra"],
+                             {:include_blank => 'Unidad', :class => 'input',
+                              :type => 'select'}, :required => true,
+                             :oninvalid => 'this.setCustomValidity("Debes seleccionar tu unidad")',
+                             :oninput => 'setCustomValidity("")' %>
+                </div>
+              </div>
+              <div class="col-xs-5">
+                <%= f.number_field :year, :min => '1', :max => '3000', :class => 'number',
+                                   :placeholder => 'Año Ingreso', autocomplete: "off", :id => 'student_field2',
+                                   :required => true, :oninvalid => 'this.setCustomValidity("Debes indicar tu año de ingreso")',
+                                   :oninput => 'setCustomValidity("")' %>
+              </div>
+
+              <div class="col-xs-12">
+                <form class="text-left">
+                  <div class="actions">
+                    <%= f.submit "Sign up", :type => 'submit', :value => 'Registrarse', :class => 'input' %>
+                  </div>
+                </form>
+              </div>
+
+                <a href="#">&nbsp</a>
+                <p>&nbsp </p>
+                  <p> </p>
+
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <!--end of row-->
+      </div>
+      <!--end of container-->
+      <br>
+      <br>
+      <br>
+
+    </section>
+    <%= render "devise/shared/links" %>
+  </div>
+  <div class="push"></div>
+</div>
+<div class="footer-fix"></div>
+</body>
+</html>
+

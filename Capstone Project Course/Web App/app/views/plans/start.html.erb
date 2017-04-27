@@ -1,0 +1,34 @@
+
+<div class="nav-container">
+  <a id="top"></a>
+  <nav>
+    <%= render 'layouts/nav_transparent_final'%>
+  </nav>
+</div>
+
+<body>
+<div class="main-container main-response image-bg">
+
+
+<div class="background-image-holder plans">
+      <%= image_tag("foundry/sunset.jpg", class: "background-image", alt: "image")%>
+    </div>
+  <section class="start-button long_section">
+    <div class="container v-align-transform">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h1 class="large uppercase mb16">Programas Semanales</h1>
+          <h5 class="uppercase mb0"> Con los programas de relajación podrás escuchar día a día  un nuevo ejercicio para practicar el  traer la mente al presente y así poder encontrar calma. </h5>
+        </div>
+      </div>
+      <!--end of row-->
+    </div>
+    <!--end of container-->
+    <div class="align-bottom relative-xs text-center">
+      <a>
+        <%= link_to '¡Comenzar!', plans_display_path, method: :get, :class => 'btn btn-filled btn-lg mb32 mt-xs-40'%>
+      </a>
+    </div>
+  </section>
+</div>
+</body>

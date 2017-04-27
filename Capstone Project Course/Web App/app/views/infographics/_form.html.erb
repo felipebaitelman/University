@@ -1,0 +1,61 @@
+<%= form_for(@infographic, html: { multipart: true, id: 'form1' }, remote: true, ) do |f| %>
+  <% if infographic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(infographic.errors.count, "error") %> prohibited this infographic from being saved:</h2>
+
+      <ul>
+        <% @infographic.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-8">
+        <div class="field">
+          <h5 class="uppercase mb8"><b>Nombre</b></h5>
+          <%= f.text_field :name %>
+        </div>
+
+        <div class="field">
+          <h5 class="uppercase mb8"><b>Descripción</b></h5>
+          <%= f.text_area :description %>
+        </div>
+
+        <div class="control-group">
+          <% if @infographic.new_record? %>
+              <h5 class="uppercase mb8"><b>Archivos</b>
+                <div class="controls">
+                  <%= file_field_tag "images[]", type: :file, multiple: true if @infographic.new_record?%>
+                </div>
+              </h5>
+          <% end %>
+        </div>
+        <% if @infographic.new_record? %>
+            <div id="InfoTopics">
+              <h5 class="uppercase mb8"><b>Categorías</b> <i id="tooltip" class="fa fa-question-circle" title="Selecciona todos los themes que desees agregar a la infografia."></i>&nbsp;</h5>
+              <%= select_tag 'Label', options_for_select(Topic.all.map{ |u| [u.name] }), {:multiple => true, :size => 5}   %>
+            </div>
+        <%end%>
+      </div>
+      <div class="col-sm-3"></div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-2">
+        <div class="actions">
+          <% if @infographic.new_record? %>
+              <%= f.submit :type => 'submit', :value => 'Subir secuencia' %>
+          <% else %>
+              <%= f.submit :type => 'submit', :value => 'Actualizar secuencia' %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-sm-9"></div>
+    </div>
+  <br>
+<% end %>

@@ -1,0 +1,34 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/sequences_image_fragment_view"
+        android:adjustViewBounds="true"
+        />
+
+    <FrameLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:background="@color/black_overlay"
+        android:id="@+id/sequences_image_fragment_text_frame"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sequences_image_fragment_text"
+            android:textSize="@dimen/card_view_subtitle_size"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="@dimen/card_view_text_margin_top_bottom"
+            android:layout_marginTop="@dimen/card_view_text_margin_top_bottom"
+            android:layout_marginRight="@dimen/card_view_text_margin_left_right"
+            android:layout_marginLeft="@dimen/fragment_recycler_card_view_text_margin_left_right"
+            />
+    </FrameLayout>
+</FrameLayout>

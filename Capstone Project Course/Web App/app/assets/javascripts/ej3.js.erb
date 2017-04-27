@@ -1,0 +1,121 @@
+$(document).ready(function()
+{
+    var canv = document.getElementById("breath3");
+
+    if(canv!=null && canv.getContext)
+    {
+
+        var ctx = canv.getContext("2d");
+		
+		var times = [4000,7000,4000,7000];
+		var transitionTime = 1000;
+		
+		var interTime = 1000.0/60.0;
+		
+		var rectR = 255.0;
+		var rectG = 255.0;
+		var rectB = 255.0;
+		
+		var curTime = 0;
+		var state = 0;
+		
+		var imgUrls = ["<%=image_path('in1.png')%>","<%=image_path('ex1.png')%>",
+      "<%=image_path('in2.png')%>", "<%=image_path('ex2.png')%>"];
+		var imgTexts = ["Inhala por la fosa izquierda","Exhala por la fosa derecha","Inhala por la fosa derecha","Exhala por la fosa izquierda"];
+		
+		var startTime = new Date().getTime();
+		var w = 0;
+		var h = 0;
+		
+		var f = "30px Helvetica Neue";
+		var fontR = 255;
+		var fontG = 255;
+		var fontB = 255;
+		
+		var xDispText = 200;
+		var yDispText = 340;
+		var xDispNumber = 450;
+		var yDispNumber = 30;
+		
+		var imgW = 420;
+		var imgH = 300;
+		var paint = false;
+
+        setInterval(function()
+		{
+			
+			var endTime = new Date().getTime();
+			
+			curTime = endTime-startTime;
+			if(curTime < 0)curTime = 0;
+			if(curTime > times[state])curTime = times[state];
+			
+			if(curTime >= times[state])
+			{
+				startTime = new Date().getTime();
+				state = (state+1)%times.length;
+				var a = 1;
+				var r = Math.round(rectR);
+				var g = Math.round(rectG);
+				var b = Math.round(rectB);
+				
+				curTime = 0;
+			}
+			
+			var img = new Image();
+			img.onload = function()
+			{
+				ctx.clearRect(0, 0, canv.width, canv.height);
+             	ctx.drawImage(img,0,0,imgW,imgH);
+				w=img.width;
+				h=img.height;
+				
+				ctx.font = f;
+                ctx.fillStyle = "rgb("+fontR+","+fontG+","+fontB+")";
+                ctx.textAlign = "center";
+                ctx.fillText(imgTexts[state], xDispText,yDispText );
+				
+				var showedTime = Math.floor((times[state] - curTime)/1000);
+				if(showedTime < 0)showedTime = 0;
+				
+				ctx.fillText(showedTime,xDispNumber,yDispNumber);
+				
+				if(curTime <= transitionTime)
+				{
+					var prop = (1-(curTime/transitionTime));
+					
+					if(prop < 0) prop = 0;
+					if(prop > 1) prop = 1;
+
+					var a = prop;
+					var r = Math.round(rectR);
+					var g = Math.round(rectG);
+					var b = Math.round(rectB);
+
+					ctx.rect(0,0,w+5,h+5);
+					ctx.fillStyle = "rgba("+r+","+g+","+b+","+a+")";
+					ctx.fill();
+				}
+				else if(curTime >= times[state]-transitionTime)
+				{
+					var prop = 1-((times[state]-curTime)/transitionTime);
+					
+					if(prop < 0) prop = 0;
+					if(prop > 1) prop = 1;
+
+					var a = prop;
+					var r = Math.round(rectR);
+					var g = Math.round(rectG);
+					var b = Math.round(rectB);
+
+					ctx.rect(0,0,w+5,h+5);
+					ctx.fillStyle = "rgba("+r+","+g+","+b+","+a+")";
+					ctx.fill();
+				}
+            };
+
+            img.src =imgUrls[state];
+			
+		},interTime);
+	}
+});

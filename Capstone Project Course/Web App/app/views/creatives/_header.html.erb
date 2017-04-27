@@ -1,0 +1,14 @@
+<header>
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1>¡ Relájate !</h1>
+            <hr>
+            <p>Relájate con Relax UC, una aplicación donde encontrarás armonía y tranquilidad.</p>
+            <% if user_signed_in? %>
+            <% else %>
+            <a href="#login" class="btn btn-primary btn-xl page-scroll">Iniciar Sesión</a>
+            <%end%>
+        </div>
+    </div>
+</header>
+

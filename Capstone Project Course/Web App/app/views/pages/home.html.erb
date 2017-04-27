@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<body class="btn-rounded scroll-assist">
+<div class="nav-container">
+  <a id="top"></a>
+  <%= render '/layouts/nav_transparent_final'%>
+</div>
+
+<div class="main-container">
+  <section class="image-bg fullscreen overlay bg-dark">
+    <div class="fs-vid-background">
+      <video autoplay muted loop>
+        <%= tag("source", type: "video/mp4", src: video_path("lake2.mp4"))%>
+      </video>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-foundry/12">
+          <h1 style="margin-top: 140px">Relájate con <br> Relax UC  </h1>
+          <p class="lead mb48 mb-xs-32">
+            Una aplicación donde encontrarás armonía, calma y tranquilidad
+          </p>
+          <% if !user_signed_in? %>
+              <a><%= link_to 'Iniciar Sesión', login_pages_path, method: :get, class:"btn btn-white mb32" %> </a>
+          <% end%>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row v-align-children">
+        <div class="col-sm-4 col-md-offset-1 mb-xs-24">
+          <h2 class="mb64 mb-xs-32">Conoce Relax UC, tu nueva aplicación favorita.</h2>
+          <div class="mb40 mb-xs-24">
+            <h5 class="uppercase bold mb16">Relajación Instantánea</h5>
+            <p class="fade-1-4" align="justify">
+              En Relax UC podrás encontrar naturaleza, programas de relajación, infografías y ejercicios que te ayudarán a cambiar de contexto, relajarte y reducir tus niveles de ansiedad.
+            </p>
+          </div>
+          <div class="mb40 mb-xs-24">
+            <h5 class="uppercase bold mb16">Reserva tus Horas</h5>
+            <p class="fade-1-4" align="justify">
+              La aplicación te permite ver nuestro calendario de actividades y reservar horas para poder asistir a nuestras salas de ayuda, ejercicios grupales y sesiones privadas con nuestros profesionales.
+            </p>
+          </div>
+          <a href="#">
+            <%= image_tag("foundry/playstore.png", class: "image-xs", alt: "App Store") %>
+          </a>
+        </div>
+        <div class="col-sm-5 col-sm-6 col-sm-offset-1 text-center">
+          <%= image_tag("foundry/app7.png", alt: "Screenshot") %>
+        </div>
+      </div>
+      <!--end of row-->
+    </div>
+    <!--end of container-->
+  </section>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<body class="scroll-assist">
+<div class="nav-container">
+  <a id="top"></a>
+  <nav>
+    <%= render 'layouts/nav_transparent_final'%>
+  </nav>
+</div>
+<div id=<%="nature_cont"%> data-cont=<%=@videos.length%>> </div>
+<div class="main-container main-response2">
+  <section class="pt0 pb0">
+    <div class="slider-all-controls">
+      <ul class="slides">
+        <li class="vid-bg image-bg overlay pt240 pb240"  >
+          <div class="background-image-holder">
+            <%= image_tag("island-beach.jpg", alt: "Background Image", class: "background-image") %>
+          </div>
+          <div class="fs-vid-background" >
+            <video class="my_vid" loop id="vid0">
+              <source src=<%=@videos.first.video_file%> type="video/mp4">
+            </video>
+          </div>
+        </li>
+        <div hidden id='vidCount'
+            data-count=<%=@videos.count%>>
+        </div>
+        <% @videos.each_with_index do |video, i|%>
+            <% if i != 0 %>
+                <li class="vid-bg image-bg overlay pt240 pb240" >
+                  <div class="background-image-holder">
+                    <%= image_tag("island-beach.jpg", alt: "Background Image", class: "background-image") %>
+                  </div>
+                  <div class="fs-vid-background" >
+                    <video class="my_vid" loop preload="" id="<%="vid#{i}"%>">
+                      <source src=<%=video.video_file%> type="video/mp4" >
+                    </video>
+                  </div>
+                </li>
+            <% end %>
+        <%end%>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<!-- BUG flexslider not lodded or found in script.js if script is not laod here -->
+<%= javascript_include_tag("foundry/flexslider.min.js") %>
+
+</body>
+</html>

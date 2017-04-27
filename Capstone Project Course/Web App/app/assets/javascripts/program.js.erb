@@ -1,0 +1,50 @@
+var program =(function() {
+  bootstrap_alert2 = function() {};
+  bootstrap_alert2.warning = function(message) {
+    $('#alert_placeholder2').html('<div class="alert alert-success fade in">' +
+        '<a class="close" data-dismiss="alert">×</a><span>'+message+'</span></div>');
+    $("#alert_placeholder2").fadeTo(2000, 500).slideUp(500, function(){
+      $("#alert_placeholder2").slideUp(500);
+    });
+  };
+
+  $('#order2').on("click",function() {
+    var order = {};
+    var data = {};
+    var correct = true;
+    for(var i = 0; i<sound_count.dataset.count; i++){
+      if(correct){
+        for(var j = 0; j<sound_count.dataset.count; j++){
+          if(j!=i){
+            if(eval("OrderP"+i).value == eval("OrderP"+j).value){
+              alert("No se puede actualizar: Audios con el mismo orden");
+              correct = false;
+              break;
+            }
+          }
+        }
+      }
+      data[eval("Sound"+i).dataset.sound_id] = {order: eval("OrderP"+i).value,
+        name: eval("nameP"+i).value, description: eval("descriptionP"+i).value}
+    }
+    data["ID"] = program_id.dataset.id;
+    if (correct) {
+      $.ajax({
+        type: 'POST',
+        url: '/programs/order',
+        beforeSend: function (xhr) {
+          xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+        },
+        data: data,
+        dataType: 'json',
+        success: bootstrap_alert2.warning('Contenido Actualizado Corrctamente')
+      });
+    }
+  });
+
+  $('#program1').on("submit",function() {
+    alert ("Subiendo Sonidos");
+  });
+});
+
+$(document).on('turbolinks:load', program);

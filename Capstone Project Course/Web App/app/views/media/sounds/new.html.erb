@@ -1,0 +1,36 @@
+
+<body>
+
+<div class="wrapper-fix">
+<div class="nav-container">
+  <%= render "layouts/nav_admin_final" %>
+</div>
+
+<div class="main-container">
+  <section class="page-title page-title-3 bg-secondary">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="uppercase mb0">Nueva Imaginería</h1>
+        </div>
+      </div>
+      <!--end of row-->
+    </div>
+    <!--end of container-->
+  </section>
+  <br>
+
+  <%= render 'form', sound: [:media, @sound] %>
+
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-11">
+      <%= link_to 'Atrás', media_sounds_path %>
+    </div>
+  </div>
+
+</div>
+  <div class="push"></div>
+</div>
+<div class="footer-fix"></div>
+</body>

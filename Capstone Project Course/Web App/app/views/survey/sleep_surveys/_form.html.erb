@@ -1,0 +1,127 @@
+<%= form_for([:survey,@sleep_survey], :remote => true) do |f| %>
+    <% if @sleep_survey.errors.any? %>
+        <div id='error_explanation'>
+          <h2><%= pluralize(@sleep_survey.errors.count, 'error') %> prohibited this sleep_survey from being saved:</h2>
+
+          <ul>
+            <% @sleep_survey.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class='field' id='SLquestion1'>
+      <%= f.label(:p1,'1. ¿Cuántas horas duermo?  <br /> &nbsp'.html_safe, :class => 'uppercase')%>
+      <%= f.text_field :p1, :class => 'input question1', :value => '0' %>
+    </div>
+
+    <div class='field' id='SLquestion2'>
+      <%= f.label(:p2, '2. ¿Cuántas horas me gustaría dormir?<br /> &nbsp'.html_safe, :class => 'uppercase') %>
+      <%= f.text_field :p2, :class => 'input question2', :value => '0'%>
+    </div>
+
+    <div class='field' id='SLquestion3'>
+      <h5 class='uppercase'>3. ¿Cómo es mi sueño? </h5>
+      <br>
+      <%= f.radio_button(:p3, 'option1', :class => 'question3', :checked => true) %>
+      <%= f.label(:option1, 'Malo', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p3, 'option2', :class => 'question3')%>
+      <%= f.label(:option2, 'Regular', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p3, 'option3', :class => 'question3') %>
+      <%= f.label(:option3, 'Bueno', class: 'stresscss uppercase') %>
+      <br><br>
+    </div>
+
+    <div class='field' id='SLquestion4'>
+      <h5 class='uppercase'>4. ¿Cuánto me demoro en quedarme dormido? </h5>
+      <br>
+      <%= f.radio_button(:p4, 'option1', :class => 'question4', :checked => true) %>
+      <%= f.label(:option1, 'Menos de 5 minutos', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p4, 'option2', :class => 'question4') %>
+      <%= f.label(:option2, 'Entre 5 y 30 minutos', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p4, 'option3', :class => 'question4') %>
+      <%= f.label(:option3, 'Más de 30 minutos', class: 'stresscss uppercase') %>
+      <br><br>
+    </div>
+
+    <div class='field' id='SLquestion5'>
+      <h5 class='uppercase'>5. ¿Cuántas veces despierto por la noche? </h5>
+      <br>
+      <%= f.radio_button(:p5, 'option1', :class => 'question5', :checked => true) %>
+      <%= f.label(:option1, '0', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p5, 'option2', :class => 'question5') %>
+      <%= f.label(:option2, '1', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p5, 'option3', :class => 'question5') %>
+      <%= f.label(:option3, '2', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p5, 'option4', :class => 'question5') %>
+      <%= f.label(:option4, '3', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p5, 'option5', :class => 'question5') %>
+      <%= f.label(:option5, '4 o más', class: 'stresscss uppercase') %>
+      <br><br>
+    </div>
+
+    <div class='field' id='SLquestion6'>
+      <h5 class='uppercase'>6. Si despierto en la noche, ¿cuánto demoro en volver a quedarme dormido?  </h5>
+      <br>
+      <%= f.radio_button(:p6, 'option4', :class => 'question6', :checked => true) %>
+      <%= f.label(:option1, 'No despierto', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p6, 'option1', :class => 'question6')%>
+      <%= f.label(:option1, 'Menos de 5 minutos', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p6, 'option2', :class => 'question6') %>
+      <%= f.label(:option2, 'Entre 5 y 30 minutos', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p6, 'option3', :class => 'question6') %>
+      <%= f.label(:option3, 'Más de 30 minutos', class: 'stresscss uppercase') %>
+      <br><br>
+    </div>
+
+    <div class='field' id='SLquestion7'>
+      <h5 class='uppercase'>7. Amanezco</h5>
+      <br>
+      <%= f.radio_button(:p7, 'option1', :class => 'question7', :checked => true) %>
+      <%= f.label(:option1, 'Cansado', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p7, 'option2', :class => 'question7') %>
+      <%= f.label(:option2, 'Más o menos', class: 'stresscss uppercase') %>
+      <%= f.radio_button(:p7, 'option3', :class => 'question7') %>
+      <%= f.label(:option3, 'Descansado', class: 'stresscss uppercase') %>
+      <br><br>
+    </div>
+
+    <div class='field' id='SLquestion8'>
+      <h5 class='uppercase'>8. Síntomas durante el día </h5>
+      <br>
+      <%= f.check_box(:p8) %>
+      <%= f.label(:option1, 'Somnolencia', class: 'stresscss uppercase') %>
+      <%= f.check_box(:p9) %>
+      <%= f.label(:option1, 'Irritabilidad', class: 'stresscss uppercase') %>
+      <%= f.check_box(:p10) %>
+      <%= f.label(:option1, 'Falta de memoria', class: 'stresscss uppercase') %>
+      <%= f.check_box(:p11) %>
+      <%= f.label(:option1, 'Dolor de cabeza', class: 'stresscss uppercase') %>
+      <%= f.check_box(:p12) %>
+      <%= f.label(:option1, 'Cansancio', class: 'stresscss uppercase') %>
+      <br><br>
+    </div>
+
+    <div class='row'>
+      <div class='col-sm-4'>
+        <div class='actions'>
+          <button type='button' class='btn btn-filled btn-lg mb32 mt-xs-40' id='next_question'>Siguiente Pregunta</button>
+        </div>
+      </div>
+    </div>
+
+    <div class='row' id='SLsubmit_b'>
+      <div class='col-sm-4'>
+        <div class='actions'>
+          <%= f.submit('Obtener Resultado') %>
+        </div>
+      </div>
+    </div>
+
+<% end %>
+
+<p id='sleep_results'>
+  <%= render @sleep_survey %>
+</p>
+

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_confirmation"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/dialog_horizontal_margin"
+    android:layout_marginLeft="@dimen/dialog_horizontal_margin"
+    android:layout_marginTop="@dimen/dialog_vertical_margin"
+    android:orientation="vertical"
+    android:elevation="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:text="Confirma tu hora"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/confirmationTitle"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/confirmation_service"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:layout_marginTop="8dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/confirmation_professional"
+                    android:layout_marginTop="8dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/confirmation_date"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="8dp"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/confirmation_campus"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="8dp"
+                    android:textSize="14sp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/confirmation_location"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="8dp"
+                    android:textSize="14sp"
+                    />
+            </LinearLayout>
+
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="24dp">
+
+            <Button
+                android:text="@string/cancel_button"
+                android:layout_width="wrap_content"
+                android:id="@+id/cancelReservationButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:textColor="@color/cyan_700"
+                android:paddingTop="@dimen/button_vertical_padding"
+                android:paddingBottom="@dimen/button_vertical_padding"
+                android:layout_height="@dimen/dialog_button_height"
+                android:layout_weight="1"/>
+
+            <Button
+                android:text="@string/reserve_button"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dialog_button_height"
+                android:id="@+id/confirmReservationButton"
+                android:textColor="@color/cyan_700"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_weight="1"
+                android:gravity="center"/>
+        </LinearLayout>
+
+</LinearLayout>

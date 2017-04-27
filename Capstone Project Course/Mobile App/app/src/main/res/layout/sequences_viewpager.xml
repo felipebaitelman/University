@@ -1,0 +1,25 @@
+<!-- activity_screen_slide.xml -->
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/sequences_view_pager_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include layout="@layout/main_background_image"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/sequences_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
+    <me.relex.circleindicator.CircleIndicator
+        android:id="@+id/sequences_view_pager_circle_indicator"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"/>
+</FrameLayout>

@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  p1: 1.5
+  p2: 1.5
+  p3: MyString
+  p4: MyString
+  p5: MyString
+  p6: MyString
+  p7: MyString
+  p8: MyString
+  p9: MyString
+  p10: MyString
+  p11: MyString
+  p12: MyString
+  result: MyString
+
+two:
+  user_id: 1
+  p1: 1.5
+  p2: 1.5
+  p3: MyString
+  p4: MyString
+  p5: MyString
+  p6: MyString
+  p7: MyString
+  p8: MyString
+  p9: MyString
+  p10: MyString
+  p11: MyString
+  p12: MyString
+  result: MyString
